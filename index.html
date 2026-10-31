@@ -101,6 +101,8 @@ figcaption .mono{white-space:nowrap}
 .browser .bar span{margin-left:10px}
 .browser .view{height:460px;overflow-y:auto}
 .browser img{display:block;width:100%;height:auto}
+.vid{margin:0 0 36px}
+.vid video{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:16/9;border-radius:6px;background:#141619}
 
 /* prices */
 .prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
@@ -203,6 +205,13 @@ footer{padding-block:20px;font-size:13px;color:var(--muted)}
       </ul>
     </div>
   </div>
+
+  <figure class="vid">
+    <video controls muted playsinline preload="metadata" poster="video/tlq_poster.jpg" width="1920" height="1080">
+      <source src="video/tlq_case.mp4" type="video/mp4">
+    </video>
+    <figcaption><span>Видео-кейс: редизайн обложки поднял CTR с 3,16% до 4,7%</span><span class="mono">46 сек</span></figcaption>
+  </figure>
 
   <div class="grid g2" style="margin-bottom:36px">
     <figure class="crop"><img src="img/tlq2.jpg" alt="Карточки стикеров в ретро-стиле" loading="lazy" width="1600" height="1138"><figcaption><span>Стилевые серии: ретро, аниме, Duolingo</span><span class="mono">Серия · 8 слайдов</span></figcaption></figure>
