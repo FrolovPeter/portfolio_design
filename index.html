@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Петр Фролов — портфолио</title>
+<meta name="description" content="Петр Фролов — графический дизайнер: инфографика для Wildberries и Ozon, превью для YouTube, полиграфия, упаковка и сайты. Санкт-Петербург, удалённо.">
+<meta property="og:title" content="Петр Фролов — дизайн, который продаёт">
+<meta property="og:description" content="Инфографика для WB и Ozon, превью YouTube, полиграфия и сайты. 10 000+ слайдов для 1 500 товаров.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://molluskin.github.io/frolovpetr.github.io/img/tlq1.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d4006f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='18' text-anchor='middle' fill='white'%3E%D0%9F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: печатный лист — работы в «обрезных метках», спецификации форматов моно-шрифтом, один акцент — пурпур CMYK */
+:root{
+  --paper:#f3f4f1; --sheet:#ffffff; --ink:#131518; --muted:#5d636c; --rule:#d9dcd6;
+  --magenta:#d4006f; --on-magenta:#ffffff; --cyan:#0090c8;
+  --display:"Dela Gothic One","Arial Black",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#101214; --sheet:#181b1e; --ink:#eef0ec; --muted:#9aa1aa; --rule:#2b3035;
+  --magenta:#ff3d9a; --on-magenta:#14060d; --cyan:#3cc3f5; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#101214; --sheet:#181b1e; --ink:#eef0ec; --muted:#9aa1aa; --rule:#2b3035;
+  --magenta:#ff3d9a; --on-magenta:#14060d; --cyan:#3cc3f5; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
+h1,h2,h3{text-wrap:balance;margin:0}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+header.top{padding-block:20px;border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:20px;letter-spacing:.01em;text-decoration:none}
+nav.sections{display:flex;gap:18px;flex-wrap:wrap}
+nav.sections a{text-decoration:none;font-size:15px;color:var(--muted)}
+nav.sections a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding-block:56px 40px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,6.2vw,76px);line-height:1.02;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--magenta)}
+.hero p.lead{font-size:19px;max-width:34em;margin:22px 0 28px;color:var(--ink)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);font-size:15px}
+.btn.primary{background:var(--magenta);border-color:var(--magenta);color:var(--on-magenta)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--ink)}
+.fact{padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+.fact:nth-child(odd){padding-right:16px;border-right:1px solid var(--rule)}
+.fact:nth-child(even){padding-left:16px}
+.fact b{display:block;font-family:var(--display);font-weight:400;font-size:34px;line-height:1.05;font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+
+/* sections */
+section.block{padding-block:56px;border-top:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:1fr minmax(0,32em);gap:24px 48px;align-items:end;margin-bottom:28px}
+.head h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,46px);line-height:1.05}
+.head p{margin:0;color:var(--muted)}
+.head .mono{display:block;margin-bottom:10px}
+
+/* crop marks frame */
+.crop{position:relative;padding:10px;margin:0}
+.crop::before,.crop::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(var(--muted),var(--muted)) left 0 top 10px/7px 1px no-repeat,
+    linear-gradient(var(--muted),var(--muted)) left 10px top 0/1px 7px no-repeat,
+    linear-gradient(var(--muted),var(--muted)) right 0 top 10px/7px 1px no-repeat,
+    linear-gradient(var(--muted),var(--muted)) right 10px top 0/1px 7px no-repeat;opacity:.7}
+.crop::after{background:
+    linear-gradient(var(--muted),var(--muted)) left 0 bottom 10px/7px 1px no-repeat,
+    linear-gradient(var(--muted),var(--muted)) left 10px bottom 0/1px 7px no-repeat,
+    linear-gradient(var(--muted),var(--muted)) right 0 bottom 10px/7px 1px no-repeat,
+    linear-gradient(var(--muted),var(--muted)) right 10px bottom 0/1px 7px no-repeat}
+.crop img{display:block;width:100%;height:auto;max-width:100%;cursor:zoom-in;background:var(--sheet)}
+figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:14px}
+figcaption .mono{white-space:nowrap}
+
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.case{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:32px;margin-bottom:36px;align-items:start}
+.case h3{font-size:24px;font-weight:700;margin-bottom:10px}
+.case ul{padding-left:18px;margin:12px 0 0}
+.case li{margin:6px 0}
+.case li::marker{color:var(--magenta)}
+.strip{height:520px;overflow-y:auto;border:1px solid var(--rule);background:var(--sheet);border-radius:4px}
+.strip img{display:block;width:100%;height:auto}
+.browser{border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--sheet)}
+.browser .bar{display:flex;gap:6px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--rule)}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:var(--rule);display:block}
+.browser .bar span{margin-left:10px}
+.browser .view{height:460px;overflow-y:auto}
+.browser img{display:block;width:100%;height:auto}
+
+/* prices */
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.price{padding:20px 20px 22px 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:6px}
+.price + .price{padding-left:20px;border-left:1px solid var(--rule)}
+.price:nth-child(3n+1){padding-left:0;border-left:0}
+.price h3{font-size:18px;font-weight:700}
+.price .cost{font-family:var(--display);font-weight:400;font-size:26px;font-variant-numeric:tabular-nums}
+.price p{margin:0;font-size:15px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted);margin-top:16px}
+
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
+.step{border-top:2px solid var(--ink);padding-top:14px}
+.step b{display:block;font-size:17px;margin-bottom:6px}
+.step b::before{counter-increment:s;content:counter(s) " · ";color:var(--magenta);font-family:var(--mono);font-size:13px}
+.step p{margin:0;font-size:15px;color:var(--muted)}
+
+.contact{background:var(--ink);color:var(--paper);padding-block:56px}
+.contact h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.6vw,54px);line-height:1.05;max-width:16em}
+.clist{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:32px}
+.clist div{border-top:1px solid color-mix(in srgb,var(--paper) 30%,transparent);padding-top:12px;min-width:0}
+.clist .mono{color:color-mix(in srgb,var(--paper) 60%,transparent)}
+.clist a,.clist span.v{display:block;font-size:18px;font-weight:600;text-decoration:none;overflow-wrap:anywhere;margin-top:4px}
+.copy{margin-top:8px;background:none;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);color:inherit;border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
+footer{padding-block:20px;font-size:13px;color:var(--muted)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,11,13,.92);display:flex;align-items:center;justify-content:center;z-index:50;padding:max(20px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));overflow:auto}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-out}
+.lb button{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));background:#fff;color:#111;border:0;border-radius:999px;padding:8px 14px;font:600 14px var(--body);cursor:pointer}
+
+@media (max-width:900px){
+  .hero .wrap,.case,.head{grid-template-columns:1fr}
+  .g5{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prices{grid-template-columns:1fr 1fr}
+  .price:nth-child(n){padding-left:0;border-left:0;padding-right:16px}
+  .price:nth-child(even){padding-left:16px;border-left:1px solid var(--rule)}
+  .steps,.clist{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .g2,.g3,.g5,.prices,.steps,.clist{grid-template-columns:1fr}
+  .g5.keep2{grid-template-columns:1fr 1fr}
+  .price:nth-child(n){padding-left:0;border-left:0}
+  nav.sections{gap:12px}
+  .strip{height:420px}.browser .view{height:380px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+<style>img{max-width:100%}[hidden]{display:none!important}html{scroll-behavior:smooth}</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top">Петр Фролов</a>
+  <nav class="sections" aria-label="Разделы">
+    <a href="#marketplaces">Маркетплейсы</a><a href="#youtube">Превью</a><a href="#print">Полиграфия</a><a href="#web">Сайты</a><a href="#brand">Айдентика</a><a href="#prices">Цены</a><a href="#contact">Контакты</a>
+  </nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="mono">Графический дизайнер · Санкт-Петербург · работаю удалённо</span>
+    <h1 style="margin-top:14px">Карточки, превью и&nbsp;полиграфия, которые <em>продают</em></h1>
+    <p class="lead">Делаю инфографику для Wildberries и Ozon, обложки для YouTube, печатную продукцию, упаковку и сайты. 8 лет в дизайне: от копицентра до руководства командой из 10 дизайнеров.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://t.me/FrolovPetr217" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn" href="#prices">Услуги и цены</a>
+      <a class="btn" href="portfolio.pdf" download="Фролов_Петр_Портфолио.pdf">Скачать PDF</a>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>10 000+</b><span>слайдов инфографики выпустила команда в TLQ</span></div>
+    <div class="fact"><b>1 500</b><span>товаров получили новые карточки</span></div>
+    <div class="fact"><b>+20–35%</b><span>средний рост конверсии после редизайна карточек</span></div>
+    <div class="fact"><b>10</b><span>дизайнеров в команде, которую я собрал</span></div>
+  </div>
+</div></section>
+
+<section class="block" id="marketplaces"><div class="wrap">
+  <div class="head">
+    <div><span class="mono">01 / Wildberries и Ozon</span><h2>Инфографика для маркетплейсов</h2></div>
+    <p>Главное фото, слайды с преимуществами и варианты обложек для A/B-тестов. Работаю по шаблонам в Figma, поэтому линейка товаров выглядит единым брендом.</p>
+  </div>
+
+  <div class="case">
+    <figure class="crop"><img src="img/tlq1.jpg" alt="Подборка карточек стикеров для WB: превью для A/B-теста" loading="lazy" width="1600" height="1138">
+      <figcaption><span>TLQ: стикеры и наклейки, 1 500 товаров</span><span class="mono">WB · Ozon · 3:4</span></figcaption></figure>
+    <div>
+      <span class="mono">Кейс · 2024–2025</span>
+      <h3>10 000 слайдов для производителя наклеек</h3>
+      <p>Пришёл первым дизайнером на производство наклеек и товаров из Китая. Нужно было быстро оформить сотни новых SKU и сделать так, чтобы карточки бренда узнавали в выдаче.</p>
+      <ul>
+        <li>Исследовал нишу и конкурентов, собрал визуальный стиль и шаблоны.</li>
+        <li>Вырастил команду до 10 дизайнеров и поставил процесс в Notion.</li>
+        <li>Делали по 2–3 обложки на товар и проверяли их A/B-тестами.</li>
+        <li>Итог: 10 000+ слайдов для 1 500 товаров, рост конверсии карточек на 20–35% после редизайна.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-bottom:36px">
+    <figure class="crop"><img src="img/tlq2.jpg" alt="Карточки стикеров в ретро-стиле" loading="lazy" width="1600" height="1138"><figcaption><span>Стилевые серии: ретро, аниме, Duolingo</span><span class="mono">Серия · 8 слайдов</span></figcaption></figure>
+    <div>
+      <span class="mono" style="display:block;margin-bottom:8px">Лента карточек · прокрутите</span>
+      <div class="strip" tabindex="0" aria-label="Лента из 1000+ карточек для WB"><img src="img/cards1000.jpg" alt="Описание кейса и лента карточек для WB и Ozon" loading="lazy" width="661" height="8000"></div>
+    </div>
+  </div>
+
+  <div class="grid g5 keep2">
+    <figure class="crop"><img src="img/massage.jpg" alt="Карточка массажёра для головы" loading="lazy" width="1200" height="1600"><figcaption><span>Массажёр</span><span class="mono">3:4</span></figcaption></figure>
+    <figure class="crop"><img src="img/watch.jpg" alt="Карточка смарт-часов" loading="lazy" width="1200" height="1600"><figcaption><span>Смарт-часы</span><span class="mono">3:4</span></figcaption></figure>
+    <figure class="crop"><img src="img/hism.jpg" alt="Карточка лазерного фонаря" loading="lazy" width="1200" height="1600"><figcaption><span>Фонарь</span><span class="mono">3:4</span></figcaption></figure>
+    <figure class="crop"><img src="img/knife.jpg" alt="Карточка охотничьего ножа «Сибирь»" loading="lazy" width="900" height="1200"><figcaption><span>Нож «Сибирь»</span><span class="mono">A/B</span></figcaption></figure>
+    <figure class="crop"><img src="img/bag.jpg" alt="Карточка термосумки на багажник" loading="lazy" width="1200" height="1600"><figcaption><span>Термосумка</span><span class="mono">3:4</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="block" id="youtube"><div class="wrap">
+  <div class="head">
+    <div><span class="mono">02 / YouTube</span><h2>Превью для видео</h2></div>
+    <p>Одна идея, контрастный коллаж и короткий заголовок, который читается на экране телефона. Игры, обучение, финансы, лайфстайл.</p>
+  </div>
+  <div class="grid g3">
+    <figure class="crop"><img src="img/yt_m8.jpg" alt="Превью «M8 HMC имба Китая»" loading="lazy" width="1502" height="1002"><figcaption><span>War Thunder</span><span class="mono">1280×720</span></figcaption></figure>
+    <figure class="crop"><img src="img/yt_ac.jpg" alt="Превью обзора Assassin's Creed Shadows" loading="lazy" width="1506" height="1006"><figcaption><span>Игровой обзор</span><span class="mono">1280×720</span></figcaption></figure>
+    <figure class="crop"><img src="img/yt_prison.jpg" alt="Превью «7 дней в тюрьме»" loading="lazy" width="1502" height="1002"><figcaption><span>Лайфстайл</span><span class="mono">1280×720</span></figcaption></figure>
+    <figure class="crop"><img src="img/yt_bank.jpg" alt="Превью про финансы" loading="lazy" width="1506" height="1006"><figcaption><span>Финансы</span><span class="mono">1280×720</span></figcaption></figure>
+    <figure class="crop"><img src="img/yt_eng.jpg" alt="Превью «Времена английского за 15 минут»" loading="lazy" width="1502" height="1002"><figcaption><span>Обучение</span><span class="mono">1280×720</span></figcaption></figure>
+    <figure class="crop"><img src="img/yt_astro.jpg" alt="Превью «Игра года Astro Bot»" loading="lazy" width="1502" height="1002"><figcaption><span>Игры</span><span class="mono">1280×720</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="block" id="print"><div class="wrap">
+  <div class="head">
+    <div><span class="mono">03 / Печать</span><h2>Полиграфия и упаковка</h2></div>
+    <p>Год работал мастером полиграфии в копицентре, поэтому макеты уходят в типографию с вылетами, правильным цветом и без лишних кругов правок.</p>
+  </div>
+  <div class="grid g2" style="margin-bottom:20px">
+    <figure class="crop"><img src="img/guide.jpg" alt="Путеводитель по Петербургу для конференции ХИТ" loading="lazy" width="1600" height="1200"><figcaption><span>Путеводитель по Петербургу для конференции «ХИТ»</span><span class="mono">16 стр · PDF</span></figcaption></figure>
+    <figure class="crop"><img src="img/booklet.jpg" alt="Евробуклет для центра «Место силы»" loading="lazy" width="1600" height="900"><figcaption><span>Евробуклет «Место силы»</span><span class="mono">A4 · 2 сгиба</span></figcaption></figure>
+  </div>
+  <div class="grid g2" style="margin-bottom:20px">
+    <figure class="crop"><img src="img/poster1.jpg" alt="Афиша концерта «Братья Рубинштейн»" loading="lazy" width="1600" height="892"><figcaption><span>Афиши «Классической точки»</span><span class="mono">A3 · экран</span></figcaption></figure>
+    <figure class="crop"><img src="img/poster2.jpg" alt="Афиша «Услышать Париж»" loading="lazy" width="1600" height="905"><figcaption><span>Моно-спектакль «Услышать Париж»</span><span class="mono">A3 · QR</span></figcaption></figure>
+  </div>
+  <div class="grid g3">
+    <figure class="crop"><img src="img/spice1.jpg" alt="Этикетка «Азиатские травы» на банке" loading="lazy" width="1600" height="1600"><figcaption><span>Линейка из 10 приправ</span><span class="mono">60×70 мм</span></figcaption></figure>
+    <figure class="crop"><img src="img/spice2.jpg" alt="Этикетка «Паприка» на банке" loading="lazy" width="1600" height="1600"><figcaption><span>Этикетка «Паприка»</span><span class="mono">60×70 мм</span></figcaption></figure>
+    <figure class="crop"><img src="img/album.jpg" alt="Обложка альбома Маши Захарияш" loading="lazy" width="1500" height="1500"><figcaption><span>Обложка альбома</span><span class="mono">3000×3000</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="block" id="web"><div class="wrap">
+  <div class="head">
+    <div><span class="mono">04 / Веб</span><h2>Интернет-магазин STURM</h2></div>
+    <p>Маркетплейс сантехники с шоу-румом в Петербурге. Спроектировал главную, каталог с фильтрами, карточку товара, корзину, доставку и личный кабинет, а также адаптив для смартфонов и планшетов.</p>
+  </div>
+  <div class="case">
+    <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="mono">STURM · главная</span></div>
+      <div class="view" tabindex="0" aria-label="Главная страница STURM, прокрутите"><img src="img/sturm_main.jpg" alt="Главная страница интернет-магазина STURM" loading="lazy" width="1600" height="3158"></div></div>
+    <div>
+      <figure class="crop"><img src="img/sturm_prev.jpg" alt="STURM на ноутбуке, планшете и смартфоне" loading="lazy" width="1600" height="1167"><figcaption><span>Десктоп и мобильная версия</span><span class="mono">12 кол · 1280 px</span></figcaption></figure>
+      <ul style="padding-left:18px">
+        <li>Модульная сетка 12 колонок: карточки, фото и тексты легко собираются в любые блоки.</li>
+        <li>UI-kit: цвета, типографика, кнопки и карточки товаров.</li>
+        <li>Лендинги под коллекции и акции.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid g2">
+    <div><span class="mono" style="display:block;margin-bottom:8px">Сетка, цвет, типографика, адаптив · прокрутите</span>
+      <div class="strip" tabindex="0" aria-label="Кейс STURM: сетка и стиль"><img src="img/sturm_case.jpg" alt="Сетка, стиль и адаптив сайта STURM" loading="lazy" width="1600" height="5941"></div></div>
+    <div><span class="mono" style="display:block;margin-bottom:8px">Карточка товара · прокрутите</span>
+      <div class="strip" tabindex="0" aria-label="Карточка товара STURM"><img src="img/sturm_card.jpg" alt="Карточка товара STURM" loading="lazy" width="1600" height="2521"></div></div>
+  </div>
+</div></section>
+
+<section class="block" id="brand"><div class="wrap">
+  <div class="head">
+    <div><span class="mono">05 / Айдентика</span><h2>Логотипы и фирменный стиль</h2></div>
+    <p>Логотип, логобук и носители: визитки, вывески, упаковка, мерч. Делал знаки для бизнеса в России и Швейцарии.</p>
+  </div>
+  <div class="grid g3">
+    <figure class="crop"><img src="img/radia.jpg" alt="Логотип RadiaPoursuite" loading="lazy" width="1600" height="1200"><figcaption><span>RadiaPoursuite</span><span class="mono">Логотип</span></figcaption></figure>
+    <figure class="crop"><img src="img/etude.jpg" alt="Знак Étude Seppey Riand Lorenzetti на табличке" loading="lazy" width="1600" height="1200"><figcaption><span>Étude Seppey Riand Lorenzetti</span><span class="mono">Знак</span></figcaption></figure>
+    <figure class="crop"><img src="img/proclimat.jpg" alt="Логобук «ПРО Климат»" loading="lazy" width="1600" height="1200"><figcaption><span>ПРО Климат</span><span class="mono">Логобук</span></figcaption></figure>
+    <figure class="crop"><img src="img/integra.jpg" alt="Логотип Intégra-Sion" loading="lazy" width="1600" height="1067"><figcaption><span>Intégra-Sion</span><span class="mono">Логотип</span></figcaption></figure>
+    <figure class="crop"><img src="img/logo10.jpg" alt="Логотип Luna Style из серии «10 логотипов»" loading="lazy" width="1600" height="1138"><figcaption><span>10 логотипов для бизнеса</span><span class="mono">Серия</span></figcaption></figure>
+    <figure class="crop"><img src="img/vera.jpg" alt="Упаковка Vera Bloom" loading="lazy" width="1535" height="1022"><figcaption><span>Vera Bloom</span><span class="mono">Упаковка</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="block" id="prices"><div class="wrap">
+  <div class="head">
+    <div><span class="mono">06 / Услуги</span><h2>Что заказать и сколько стоит</h2></div>
+    <p>Цены стартовые: точную сумму назову после брифа. В каждую услугу входят 2 круга правок и исходники.</p>
+  </div>
+  <div class="prices">
+    <div class="price"><h3>Главное фото для WB или Ozon</h3><span class="cost">от 2 500 ₽</span><p>2 варианта обложки для A/B-теста. Срок 2 дня.</p></div>
+    <div class="price"><h3>Карточка под ключ</h3><span class="cost">от 8 000 ₽</span><p>Обложка и 5 слайдов с преимуществами, анализ 5 конкурентов. Срок 3–4 дня.</p></div>
+    <div class="price"><h3>Контент на месяц</h3><span class="cost">от 30 000 ₽</span><p>4 карточки под ключ, обновление обложек по итогам тестов, приоритетные сроки.</p></div>
+    <div class="price"><h3>Превью для YouTube</h3><span class="cost">от 1 500 ₽</span><p>Пакет из 3 превью — от 4 000 ₽. Срок 1 день.</p></div>
+    <div class="price"><h3>Полиграфия</h3><span class="cost">от 3 000 ₽</span><p>Листовка, афиша, буклет, каталог (от 1 500 ₽ за разворот). Файлы для типографии.</p></div>
+    <div class="price"><h3>Упаковка и этикетки</h3><span class="cost">от 7 000 ₽</span><p>Дизайн, развёртка, технические файлы, 3D-мокап.</p></div>
+    <div class="price"><h3>Логотип и мини-брендбук</h3><span class="cost">от 15 000 ₽</span><p>3 концепции, логотип, цвета, шрифты, носители.</p></div>
+    <div class="price"><h3>Лендинг на Tilda</h3><span class="cost">от 30 000 ₽</span><p>Дизайн, адаптив, сборка на Tilda.</p></div>
+    <div class="price"><h3>Шаблоны для команды</h3><span class="cost">от 20 000 ₽</span><p>Система шаблонов карточек в Figma, чтобы ваши дизайнеры работали в едином стиле.</p></div>
+  </div>
+  <p class="note">Работаю как самозанятый: выдаю чек на каждую оплату. Для больших проектов работаю по договору и этапам.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="head"><div><span class="mono">07 / Процесс</span><h2>Как я работаю</h2></div><p>От брифа до готовых файлов обычно проходит 2–5 дней, в зависимости от объёма.</p></div>
+  <div class="steps">
+    <div class="step"><b>Бриф</b><p>Товар, аудитория, конкуренты, сроки. Если нужно, помогу составить ТЗ.</p></div>
+    <div class="step"><b>Концепт</b><p>Показываю 2 варианта главного экрана или обложки.</p></div>
+    <div class="step"><b>Дизайн и правки</b><p>Довожу выбранный вариант, 2 круга правок включены.</p></div>
+    <div class="step"><b>Файлы</b><p>Готовые изображения под требования площадки или типографии и исходники.</p></div>
+  </div>
+</div></section>
+</main>
+
+<section class="contact" id="contact"><div class="wrap">
+  <span class="mono" style="color:inherit;opacity:.65">Контакты</span>
+  <h2 style="margin-top:12px">Расскажите про товар или проект — отвечу в течение дня</h2>
+  <div class="clist">
+    <div><span class="mono">Telegram</span><a href="https://t.me/FrolovPetr217" target="_blank" rel="noopener">@FrolovPetr217</a></div>
+    <div><span class="mono">Телефон</span><span class="v" id="phone">+7 950 048-46-96</span><button class="copy" type="button" data-copy="phone">Скопировать</button></div>
+    <div><span class="mono">Почта</span><span class="v" id="mail">petrfrolov217@gmail.com</span><button class="copy" type="button" data-copy="mail">Скопировать</button></div>
+    <div><span class="mono">Ещё работы</span><a href="https://www.behance.net/frolovpetr" target="_blank" rel="noopener">Behance</a><a href="https://kwork.ru/user/frolovpetr" target="_blank" rel="noopener">Kwork</a><a href="portfolio.pdf" download="Фролов_Петр_Портфолио.pdf">PDF-портфолио</a></div>
+  </div>
+</div></section>
+<footer><div class="wrap">Петр Фролов · графический дизайнер · Санкт-Петербург · 2026</div></footer>
+
+<div class="lb" id="lb" hidden><button type="button" id="lbclose">Закрыть</button><img id="lbimg" alt=""></div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'), im=document.getElementById('lbimg');
+  function close(){lb.hidden=true; im.removeAttribute('src');}
+  document.querySelectorAll('.crop img').forEach(function(el){
+    el.addEventListener('click',function(){im.src=el.currentSrc||el.src; im.alt=el.alt; lb.hidden=false;});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=document.getElementById(b.dataset.copy);
+      var done=function(){b.textContent='Скопировано';setTimeout(function(){b.textContent='Скопировать'},1600)};
+      try{navigator.clipboard.writeText(t.textContent).then(done,function(){sel(t)});}catch(e){sel(t)}
+    });
+  });
+  function sel(t){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+})();
+</script>
+
+</body>
+</html>
