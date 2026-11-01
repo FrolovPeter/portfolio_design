@@ -3,371 +3,549 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Петр Фролов — портфолио</title>
+<title>Петр Фролов — дизайн, который продаёт</title>
 <meta name="description" content="Петр Фролов — графический дизайнер: инфографика для Wildberries и Ozon, превью для YouTube, полиграфия, упаковка и сайты. Санкт-Петербург, удалённо.">
 <meta property="og:title" content="Петр Фролов — дизайн, который продаёт">
 <meta property="og:description" content="Инфографика для WB и Ozon, превью YouTube, полиграфия и сайты. 10 000+ слайдов для 1 500 товаров.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://molluskin.github.io/frolovpetr.github.io/img/tlq1.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d4006f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='18' text-anchor='middle' fill='white'%3E%D0%9F%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<meta name="theme-color" content="#0e0d10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff2d8f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='18' text-anchor='middle' fill='%230e0d10'%3E%D0%9F%3C/text%3E%3C/svg%3E">
 <style>
-/* Layout: печатный лист — работы в «обрезных метках», спецификации форматов моно-шрифтом, один акцент — пурпур CMYK */
-:root{
-  --paper:#f3f4f1; --sheet:#ffffff; --ink:#131518; --muted:#5d636c; --rule:#d9dcd6;
-  --magenta:#d4006f; --on-magenta:#ffffff; --cyan:#0090c8;
-  --display:"Dela Gothic One","Arial Black",system-ui,sans-serif;
-  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-  --wrap:1180px;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#101214; --sheet:#181b1e; --ink:#eef0ec; --muted:#9aa1aa; --rule:#2b3035;
-  --magenta:#ff3d9a; --on-magenta:#14060d; --cyan:#3cc3f5; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#101214; --sheet:#181b1e; --ink:#eef0ec; --muted:#9aa1aa; --rule:#2b3035;
-  --magenta:#ff3d9a; --on-magenta:#14060d; --cyan:#3cc3f5; color-scheme:dark}
-*{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;margin:0}
-.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
-h1,h2,h3{text-wrap:balance;margin:0}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+/* Layout: HUD-рамка поверх страницы, секции как «главы» с моно-метками, тяжёлый узкий гротеск с выдавленной розовой тенью, сканер по ячейкам услуг */
+@font-face{font-family:"Cond";font-weight:800;font-display:swap;src:url(fonts/fira-sans-extra-condensed-cyrillic-800-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Cond";font-weight:800;font-display:swap;src:url(fonts/fira-sans-extra-condensed-latin-800-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20BD,U+2212}
+@font-face{font-family:"Cond";font-weight:900;font-display:swap;src:url(fonts/fira-sans-extra-condensed-cyrillic-900-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Cond";font-weight:900;font-display:swap;src:url(fonts/fira-sans-extra-condensed-latin-900-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20BD,U+2212}
+@font-face{font-family:"Golos";font-weight:400;font-display:swap;src:url(fonts/golos-text-cyrillic-400-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Golos";font-weight:400;font-display:swap;src:url(fonts/golos-text-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20BD,U+2212}
+@font-face{font-family:"Golos";font-weight:600;font-display:swap;src:url(fonts/golos-text-cyrillic-600-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Golos";font-weight:600;font-display:swap;src:url(fonts/golos-text-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20BD,U+2212}
+@font-face{font-family:"Mono";font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-cyrillic-400-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Mono";font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20BD,U+2212}
+@font-face{font-family:"Mono";font-weight:600;font-display:swap;src:url(fonts/jetbrains-mono-cyrillic-600-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Mono";font-weight:600;font-display:swap;src:url(fonts/jetbrains-mono-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20BD,U+2212}
 
-/* header */
-header.top{padding-block:20px;border-bottom:1px solid var(--rule)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.brand{font-family:var(--display);font-size:20px;letter-spacing:.01em;text-decoration:none}
-nav.sections{display:flex;gap:18px;flex-wrap:wrap}
-nav.sections a{text-decoration:none;font-size:15px;color:var(--muted)}
-nav.sections a:hover{color:var(--ink)}
+:root{
+  --bg:#0e0d10; --bg2:#141216; --cell:#18151a; --ink:#f3efe9; --muted:#8f8a93; --dim:#57525b;
+  --line:#2a252d; --pink:#ff2d8f; --pink-d:#a3195b; --glow:rgba(255,45,143,.16);
+  --cond:"Cond","Arial Narrow","Roboto Condensed",Impact,sans-serif;
+  --body:"Golos",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Mono",ui-monospace,Menlo,Consolas,monospace;
+  --hud:28px; --wrap:1240px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden}
+img{max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+::selection{background:var(--pink);color:var(--bg)}
+
+/* атмосфера: свечение, развёртка, зерно */
+.atmo{position:fixed;inset:0;pointer-events:none;z-index:0}
+.atmo .glow{position:absolute;width:90vmax;height:90vmax;left:50%;top:var(--gy,30%);transform:translate(-50%,-50%);background:radial-gradient(circle,var(--glow) 0,rgba(255,45,143,.05) 35%,transparent 62%);transition:top 1.2s cubic-bezier(.2,.7,.2,1)}
+.atmo .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px)}
+.atmo .grain{position:absolute;inset:-50%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(4) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+
+/* HUD */
+.hud{position:fixed;inset:0;pointer-events:none;z-index:40;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hud .c{position:absolute;width:18px;height:18px;border-color:var(--dim);border-style:solid}
+.hud .tl{top:calc(14px + env(safe-area-inset-top,0px));left:calc(14px + env(safe-area-inset-left,0px));border-width:1px 0 0 1px}
+.hud .tr{top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));border-width:1px 1px 0 0}
+.hud .bl{bottom:calc(14px + env(safe-area-inset-bottom,0px));left:calc(14px + env(safe-area-inset-left,0px));border-width:0 0 1px 1px}
+.hud .br{bottom:calc(14px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px));border-width:0 1px 1px 0}
+.hud .t{position:absolute;white-space:nowrap}
+.hud .t1{top:calc(22px + env(safe-area-inset-top,0px));left:calc(var(--hud) + 14px + env(safe-area-inset-left,0px))}
+.hud .t2{top:calc(22px + env(safe-area-inset-top,0px));right:calc(var(--hud) + 14px + env(safe-area-inset-right,0px));color:var(--ink)}
+.hud .t3{bottom:calc(22px + env(safe-area-inset-bottom,0px));left:calc(var(--hud) + 14px + env(safe-area-inset-left,0px))}
+.hud .t4{bottom:calc(22px + env(safe-area-inset-bottom,0px));right:calc(var(--hud) + 14px + env(safe-area-inset-right,0px));font-variant-numeric:tabular-nums}
+.hud .t2 b,.hud .t3 b{color:var(--pink);font-weight:600}
+.hud .dash{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(26px + env(safe-area-inset-bottom,0px));display:flex;gap:6px}
+.hud .dash i{display:block;width:22px;height:2px;background:var(--dim);transition:background .3s,width .3s}
+.hud .dash i.on{background:var(--ink);width:34px}
+
+/* каркас */
+main,footer{position:relative;z-index:1}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(24px,calc(var(--hud) + 28px),env(safe-area-inset-left,0px));padding-right:max(24px,calc(var(--hud) + 28px),env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.mono b{color:var(--pink);font-weight:600}
+.pink{color:var(--pink)}
+.cond{font-family:var(--cond);font-weight:900;letter-spacing:-.005em;text-transform:uppercase;line-height:.92}
+.ex{text-shadow:1px 1px 0 var(--pink),2px 2px 0 var(--pink),3px 3px 0 var(--pink),4px 4px 0 var(--pink-d),5px 5px 0 var(--pink-d),6px 6px 0 var(--pink-d),7px 7px 14px rgba(0,0,0,.6)}
+section.chap{padding-block:120px 40px;scroll-margin-top:40px}
+.chead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,30em);gap:20px 56px;align-items:end;margin-bottom:44px;border-bottom:1px solid var(--line);padding-bottom:26px}
+.chead h2{margin:14px 0 0;font-size:clamp(48px,7vw,104px);text-wrap:balance}
+.chead p{margin:0;color:var(--muted)}
 
 /* hero */
-.hero{padding-block:56px 40px}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
-.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,6.2vw,76px);line-height:1.02;letter-spacing:-.01em}
-.hero h1 em{font-style:normal;color:var(--magenta)}
-.hero p.lead{font-size:19px;max-width:34em;margin:22px 0 28px;color:var(--ink)}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);font-size:15px}
-.btn.primary{background:var(--magenta);border-color:var(--magenta);color:var(--on-magenta)}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--ink)}
-.fact{padding:16px 0 14px;border-bottom:1px solid var(--rule)}
-.fact:nth-child(odd){padding-right:16px;border-right:1px solid var(--rule)}
-.fact:nth-child(even){padding-left:16px}
-.fact b{display:block;font-family:var(--display);font-weight:400;font-size:34px;line-height:1.05;font-variant-numeric:tabular-nums}
-.fact span{font-size:14px;color:var(--muted)}
+.hero{min-height:min(100svh,980px);display:flex;align-items:center;padding-block:120px 80px;position:relative;overflow:hidden}
+.ghost{position:absolute;left:0;right:0;white-space:nowrap;font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:clamp(90px,15vw,220px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(243,239,233,.07);pointer-events:none;user-select:none}
+.ghost span{display:inline-block;animation:mq 60s linear infinite;padding-right:.4em}
+.ghost.g2 span{animation-direction:reverse;animation-duration:75s}
+@keyframes mq{to{transform:translateX(-50%)}}
+.hero .ghost.g1{top:9%}.hero .ghost.g2{bottom:6%}
+.query{display:flex;align-items:center;gap:10px}
+.typed{font-family:var(--body);font-weight:600;font-size:clamp(26px,3.4vw,44px);margin:18px 0 0;min-height:1.3em}
+.typed .cur{display:inline-block;width:3px;height:1em;background:var(--pink);vertical-align:-.12em;margin-left:6px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero h1{font-size:clamp(58px,9.4vw,150px);line-height:.95;margin:26px 0 0}
+.hero h1 .l2{display:block;color:var(--pink);text-shadow:none;font-size:.6em;line-height:1;margin-top:.18em}
+.hero .sub{max-width:36em;margin:34px 0 0;font-size:19px;color:#cfc9cf}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:15px 22px;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);background:rgba(20,18,22,.7);color:var(--ink);transition:border-color .2s,background .2s,transform .2s}
+.btn:hover{border-color:var(--pink);transform:translateY(-2px)}
+.btn.p{background:var(--pink);border-color:var(--pink);color:#140810;font-weight:600}
+.btn.p:hover{background:#ff4b9f}
 
-/* sections */
-section.block{padding-block:56px;border-top:1px solid var(--rule)}
-.head{display:grid;grid-template-columns:1fr minmax(0,32em);gap:24px 48px;align-items:end;margin-bottom:28px}
-.head h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,46px);line-height:1.05}
-.head p{margin:0;color:var(--muted)}
-.head .mono{display:block;margin-bottom:10px}
+/* сканер услуг */
+.scanner{margin-top:70px}
+.scanner .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.cells{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.cell{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 14px 16px;background:var(--cell);border:1px solid var(--line);text-decoration:none;text-align:center;transition:border-color .25s,background .25s}
+.cell .k{font-family:var(--cond);font-weight:900;font-size:clamp(24px,2.3vw,38px);line-height:.9;text-transform:uppercase;transition:color .25s}
+.cell .s{font-size:13px;color:var(--muted)}
+.cell .n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--dim);margin-top:4px}
+.cell.on{border-color:var(--pink);background:#1d1219;box-shadow:0 0 0 1px var(--pink),0 0 40px rgba(255,45,143,.18)}
+.cell.on .k{color:var(--pink)}
 
-/* crop marks frame */
-.crop{position:relative;padding:10px;margin:0}
-.crop::before,.crop::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    linear-gradient(var(--muted),var(--muted)) left 0 top 10px/7px 1px no-repeat,
-    linear-gradient(var(--muted),var(--muted)) left 10px top 0/1px 7px no-repeat,
-    linear-gradient(var(--muted),var(--muted)) right 0 top 10px/7px 1px no-repeat,
-    linear-gradient(var(--muted),var(--muted)) right 10px top 0/1px 7px no-repeat;opacity:.7}
-.crop::after{background:
-    linear-gradient(var(--muted),var(--muted)) left 0 bottom 10px/7px 1px no-repeat,
-    linear-gradient(var(--muted),var(--muted)) left 10px bottom 0/1px 7px no-repeat,
-    linear-gradient(var(--muted),var(--muted)) right 0 bottom 10px/7px 1px no-repeat,
-    linear-gradient(var(--muted),var(--muted)) right 10px bottom 0/1px 7px no-repeat}
-.crop img{display:block;width:100%;height:auto;max-width:100%;cursor:zoom-in;background:var(--sheet)}
-figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:14px}
-figcaption .mono{white-space:nowrap}
+/* статистика */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.stat{padding:28px 24px 26px 0;border-bottom:1px solid var(--line)}
+.stat+.stat{padding-left:24px;border-left:1px solid var(--line)}
+.stat .v{font-family:var(--cond);font-weight:900;font-size:clamp(56px,6vw,92px);line-height:.95;font-variant-numeric:tabular-nums}
+.stat .bar{height:3px;background:var(--line);margin:18px 0 12px;position:relative;overflow:hidden}
+.stat .bar i{position:absolute;inset:0 auto 0 0;width:var(--w,100%);background:var(--pink);transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+.stat .l{font-size:15px;color:var(--muted)}
 
-.grid{display:grid;gap:20px}
+/* видео */
+.vid{position:relative;margin:0;border:1px solid var(--line);background:#000}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:16/9}
+.vid figcaption{display:flex;justify-content:space-between;gap:16px;padding:14px 16px;font-size:14px;border-top:1px solid var(--line);background:var(--bg2)}
+
+/* карточки работ */
+.frame{position:relative;margin:0}
+.frame .img{position:relative;display:block;overflow:hidden;background:var(--bg2);border:1px solid var(--line);cursor:zoom-in;transition:border-color .25s}
+.frame img{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.frame .img::after{content:"";position:absolute;left:0;right:0;top:-30%;height:30%;background:linear-gradient(180deg,transparent,rgba(255,45,143,.22),transparent);opacity:0;pointer-events:none}
+.frame:hover .img{border-color:var(--pink)}
+.frame:hover img{transform:scale(1.03)}
+.frame:hover .img::after{opacity:1;animation:sweep 1.1s ease-out}
+@keyframes sweep{from{top:-30%}to{top:100%}}
+.frame figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:14px}
+.frame figcaption .mono{font-size:11px;white-space:nowrap}
+.grid{display:grid;gap:18px}
 .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .g5{grid-template-columns:repeat(5,minmax(0,1fr))}
-.case{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:32px;margin-bottom:36px;align-items:start}
-.case h3{font-size:24px;font-weight:700;margin-bottom:10px}
-.case ul{padding-left:18px;margin:12px 0 0}
-.case li{margin:6px 0}
-.case li::marker{color:var(--magenta)}
-.strip{height:520px;overflow-y:auto;border:1px solid var(--rule);background:var(--sheet);border-radius:4px}
+.case{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:start;margin-bottom:40px}
+.case h3{font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:44px;line-height:.95;margin:12px 0 16px}
+.case ul{list-style:none;padding:0;margin:18px 0 0}
+.case li{position:relative;padding:10px 0 10px 26px;border-top:1px solid var(--line)}
+.case li::before{content:"▸";position:absolute;left:0;color:var(--pink)}
+.strip{height:540px;overflow-y:auto;border:1px solid var(--line);background:var(--bg2)}
 .strip img{display:block;width:100%;height:auto}
-.browser{border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--sheet)}
-.browser .bar{display:flex;gap:6px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--rule)}
-.browser .bar i{width:9px;height:9px;border-radius:50%;background:var(--rule);display:block}
+.browser{border:1px solid var(--line);background:var(--bg2)}
+.browser .bar{display:flex;gap:6px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line)}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:var(--dim);display:block}
 .browser .bar span{margin-left:10px}
-.browser .view{height:460px;overflow-y:auto}
+.browser .view{height:470px;overflow-y:auto}
 .browser img{display:block;width:100%;height:auto}
-.vid{margin:0 0 36px}
-.vid video{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:16/9;border-radius:6px;background:#141619}
 
-/* prices */
-.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
-.price{padding:20px 20px 22px 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:6px}
-.price + .price{padding-left:20px;border-left:1px solid var(--rule)}
-.price:nth-child(3n+1){padding-left:0;border-left:0}
-.price h3{font-size:18px;font-weight:700}
-.price .cost{font-family:var(--display);font-weight:400;font-size:26px;font-variant-numeric:tabular-nums}
-.price p{margin:0;font-size:15px;color:var(--muted)}
-.note{font-size:14px;color:var(--muted);margin-top:16px}
+/* цены */
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.price{position:relative;padding:24px 22px 22px;background:var(--cell);border:1px solid var(--line);transition:border-color .25s,transform .25s}
+.price:hover{border-color:var(--pink);transform:translateY(-3px)}
+.price .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--dim)}
+.price h3{margin:10px 0 6px;font-size:19px}
+.price .cost{font-family:var(--cond);font-weight:900;font-size:42px;line-height:1;color:var(--pink)}
+.price p{margin:10px 0 0;font-size:14px;color:var(--muted)}
+.note{margin-top:18px;font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.step{padding:22px;border:1px solid var(--line);background:var(--cell)}
+.step .k{font-family:var(--cond);font-weight:900;font-size:56px;line-height:1;color:var(--dim)}
+.step b{display:block;font-size:19px;margin:10px 0 6px}
+.step p{margin:0;font-size:14px;color:var(--muted)}
 
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
-.step{border-top:2px solid var(--ink);padding-top:14px}
-.step b{display:block;font-size:17px;margin-bottom:6px}
-.step b::before{counter-increment:s;content:counter(s) " · ";color:var(--magenta);font-family:var(--mono);font-size:13px}
-.step p{margin:0;font-size:15px;color:var(--muted)}
+/* финал */
+.final{padding-block:140px 160px;text-align:center;position:relative;overflow:hidden}
+.final .ghost{top:50%;transform:translateY(-50%)}
+.final h2{font-size:clamp(80px,15vw,230px);margin:18px 0 0;color:var(--pink)}
+.final .rule{width:min(560px,80%);height:1px;background:var(--ink);margin:26px auto 0;opacity:.5}
+.contacts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:56px;text-align:left}
+.contacts > div{padding:18px;border:1px solid var(--line);background:var(--cell);min-width:0}
+.contacts a,.contacts .v{display:block;font-size:18px;font-weight:600;text-decoration:none;overflow-wrap:anywhere;margin-top:6px}
+.contacts a:hover{color:var(--pink)}
+.copy{margin-top:10px;background:none;border:1px solid var(--line);color:var(--muted);padding:5px 10px;font:inherit;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.copy:hover{border-color:var(--pink);color:var(--ink)}
+footer{padding-block:24px 70px;text-align:center}
 
-.contact{background:var(--ink);color:var(--paper);padding-block:56px}
-.contact h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.6vw,54px);line-height:1.05;max-width:16em}
-.clist{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:32px}
-.clist div{border-top:1px solid color-mix(in srgb,var(--paper) 30%,transparent);padding-top:12px;min-width:0}
-.clist .mono{color:color-mix(in srgb,var(--paper) 60%,transparent)}
-.clist a,.clist span.v{display:block;font-size:18px;font-weight:600;text-decoration:none;overflow-wrap:anywhere;margin-top:4px}
-.copy{margin-top:8px;background:none;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);color:inherit;border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
-footer{padding-block:20px;font-size:13px;color:var(--muted)}
+/* появление */
+.anim .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.anim .rv.in{opacity:1;transform:none}
 
-/* lightbox */
-.lb{position:fixed;inset:0;background:rgba(10,11,13,.92);display:flex;align-items:center;justify-content:center;z-index:50;padding:max(20px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));overflow:auto}
-.lb img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-out}
-.lb button{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));background:#fff;color:#111;border:0;border-radius:999px;padding:8px 14px;font:600 14px var(--body);cursor:pointer}
+/* лайтбокс */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(8,7,9,.94);display:flex;align-items:center;justify-content:center;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-out;border:1px solid var(--line)}
+.lb button{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));background:var(--pink);color:#140810;border:0;padding:9px 14px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
 
-@media (max-width:900px){
-  .hero .wrap,.case,.head{grid-template-columns:1fr}
+@media (max-width:980px){
+  .chead,.case{grid-template-columns:1fr}
+  .cells{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){padding-left:0;border-left:0}
   .g5{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .prices{grid-template-columns:1fr 1fr}
-  .price:nth-child(n){padding-left:0;border-left:0;padding-right:16px}
-  .price:nth-child(even){padding-left:16px;border-left:1px solid var(--rule)}
-  .steps,.clist{grid-template-columns:1fr 1fr}
+  .prices,.g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps,.contacts{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media (max-width:560px){
+@media (max-width:640px){
+  :root{--hud:0px}
   body{font-size:16px}
-  .g2,.g3,.g5,.prices,.steps,.clist{grid-template-columns:1fr}
-  .g5.keep2{grid-template-columns:1fr 1fr}
-  .price:nth-child(n){padding-left:0;border-left:0}
-  nav.sections{gap:12px}
+  .hud .t2,.hud .t3,.hud .t4,.hud .dash,.hud .bl,.hud .br{display:none}
+  .hud .t1{left:calc(30px + env(safe-area-inset-left,0px))}
+  .hud .t2{right:calc(30px + env(safe-area-inset-right,0px))}
+  .wrap{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+  section.chap{padding-block:84px 24px}
+  .cells{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats,.g2,.g3,.prices,.steps,.contacts{grid-template-columns:1fr}
+  .stat+.stat{padding-left:0;border-left:0}
+  .g5{grid-template-columns:repeat(2,minmax(0,1fr))}
   .strip{height:420px}.browser .view{height:380px}
+  .case h3{font-size:36px}
 }
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ghost span,.atmo .grain,.typed .cur{animation:none}
+  .anim .rv{opacity:1;transform:none;transition:none}
+}
 </style>
-<style>img{max-width:100%}[hidden]{display:none!important}html{scroll-behavior:smooth}</style>
 </head>
 <body>
+<div class="atmo" aria-hidden="true"><div class="glow"></div><div class="scan"></div><div class="grain"></div></div>
 
-<header class="top"><div class="wrap">
-  <a class="brand" href="#top">Петр Фролов</a>
-  <nav class="sections" aria-label="Разделы">
-    <a href="#marketplaces">Маркетплейсы</a><a href="#youtube">Превью</a><a href="#print">Полиграфия</a><a href="#web">Сайты</a><a href="#brand">Айдентика</a><a href="#prices">Цены</a><a href="#contact">Контакты</a>
-  </nav>
-</div></header>
+<div class="hud" aria-hidden="true">
+  <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+  <span class="t t1">FROLOV.DESIGN // SPB</span>
+  <span class="t t2" id="clock">2026.11.01 · <b>MSK</b></span>
+  <span class="t t3" id="secname">SEC 01 · <b>СТАРТ</b></span>
+  <span class="t t4" id="scrollpos">SCROLL 000%</span>
+  <span class="dash" id="dash"></span>
+</div>
 
 <main id="top">
-<section class="hero"><div class="wrap">
-  <div>
-    <span class="mono">Графический дизайнер · Санкт-Петербург · работаю удалённо</span>
-    <h1 style="margin-top:14px">Карточки, превью и&nbsp;полиграфия, которые <em>продают</em></h1>
-    <p class="lead">Делаю инфографику для Wildberries и Ozon, обложки для YouTube, печатную продукцию, упаковку и сайты. 8 лет в дизайне: от копицентра до руководства командой из 10 дизайнеров.</p>
+<!-- HERO -->
+<section class="hero chap" data-sec="Старт" id="start">
+  <div class="ghost g1" aria-hidden="true"><span>Инфографика — превью — полиграфия — сайты — упаковка — айдентика — Инфографика — превью — полиграфия — сайты — упаковка — айдентика — </span></div>
+  <div class="ghost g2" aria-hidden="true"><span>WB — OZON — YOUTUBE — PRINT — WEB — WB — OZON — YOUTUBE — PRINT — WEB — WB — OZON — YOUTUBE — PRINT — WEB — </span></div>
+  <div class="wrap" style="position:relative;width:100%">
+    <div class="query mono"><b>›</b> QUERY 001 · графический дизайнер · Санкт-Петербург</div>
+    <p class="typed" id="typed" data-text="Нужны карточки, которые продают?">Нужны карточки, которые продают?<span class="cur" aria-hidden="true"></span></p>
+    <h1 class="cond ex">Петр Фролов<span class="l2">дизайн, который продаёт</span></h1>
+    <p class="sub">Инфографика для Wildberries и Ozon, превью для YouTube, полиграфия, упаковка и сайты. 8 лет в дизайне: от копицентра до руководства командой из 10 дизайнеров.</p>
     <div class="cta">
-      <a class="btn primary" href="https://t.me/FrolovPetr217" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn p" href="https://t.me/FrolovPetr217" target="_blank" rel="noopener">Написать в Telegram ▸</a>
       <a class="btn" href="#prices">Услуги и цены</a>
-      <a class="btn" href="portfolio.pdf" download="Фролов_Петр_Портфолио.pdf">Скачать PDF</a>
+      <a class="btn" href="portfolio.pdf" download="Фролов_Петр_Портфолио.pdf">PDF-портфолио</a>
+    </div>
+
+    <div class="scanner">
+      <div class="row"><span class="mono">НАПРАВЛЕНИЯ · 6</span><span class="mono" id="scanlab">СКАНИРУЮ ▸ <b>WB / OZON</b></span></div>
+      <div class="cells" id="cells">
+        <a class="cell on" href="#marketplaces" data-k="WB / OZON"><span class="k">WB/Ozon</span><span class="s">инфографика</span><span class="n">10 000+ слайдов</span></a>
+        <a class="cell" href="#youtube" data-k="YOUTUBE"><span class="k">YouTube</span><span class="s">превью</span><span class="n">1280×720</span></a>
+        <a class="cell" href="#print" data-k="ПЕЧАТЬ"><span class="k">Печать</span><span class="s">буклеты, афиши</span><span class="n">CMYK</span></a>
+        <a class="cell" href="#print" data-k="УПАКОВКА"><span class="k">Упаковка</span><span class="s">этикетки</span><span class="n">60×70 мм</span></a>
+        <a class="cell" href="#web" data-k="САЙТЫ"><span class="k">Сайты</span><span class="s">Figma, Tilda</span><span class="n">7 экранов</span></a>
+        <a class="cell" href="#brand" data-k="ЛОГОТИПЫ"><span class="k">Лого</span><span class="s">айдентика</span><span class="n">RU · CH</span></a>
+      </div>
     </div>
   </div>
-  <div class="facts">
-    <div class="fact"><b>10 000+</b><span>слайдов инфографики выпустила команда в TLQ</span></div>
-    <div class="fact"><b>1 500</b><span>товаров получили новые карточки</span></div>
-    <div class="fact"><b>+20–35%</b><span>средний рост конверсии после редизайна карточек</span></div>
-    <div class="fact"><b>10</b><span>дизайнеров в команде, которую я собрал</span></div>
-  </div>
-</div></section>
+</section>
 
-<section class="block" id="marketplaces"><div class="wrap">
-  <div class="head">
-    <div><span class="mono">01 / Wildberries и Ozon</span><h2>Инфографика для маркетплейсов</h2></div>
-    <p>Главное фото, слайды с преимуществами и варианты обложек для A/B-тестов. Работаю по шаблонам в Figma, поэтому линейка товаров выглядит единым брендом.</p>
-  </div>
-
-  <div class="case">
-    <figure class="crop"><img src="img/tlq1.jpg" alt="Подборка карточек стикеров для WB: превью для A/B-теста" loading="lazy" width="1600" height="1138">
-      <figcaption><span>TLQ: стикеры и наклейки, 1 500 товаров</span><span class="mono">WB · Ozon · 3:4</span></figcaption></figure>
-    <div>
-      <span class="mono">Кейс · 2024–2026</span>
-      <h3>10 000 слайдов для производителя наклеек</h3>
-      <p>Пришёл первым дизайнером на производство наклеек и товаров из Китая. Нужно было быстро оформить сотни новых SKU и сделать так, чтобы карточки бренда узнавали в выдаче.</p>
-      <ul>
-        <li>Исследовал нишу и конкурентов, собрал визуальный стиль и шаблоны.</li>
-        <li>Вырастил команду до 10 дизайнеров и поставил процесс в Notion.</li>
-        <li>Делали по 2–3 обложки на товар и проверяли их A/B-тестами.</li>
-        <li>Итог: 10 000+ слайдов для 1 500 товаров, рост конверсии карточек на 20–35% после редизайна.</li>
-      </ul>
+<!-- STATS -->
+<section class="chap" data-sec="Цифры" id="numbers" style="padding-top:40px">
+  <div class="wrap">
+    <div class="mono rv" style="margin-bottom:18px"><b>SEC 02</b> · ЦИФРЫ</div>
+    <div class="stats rv">
+      <div class="stat"><div class="v" data-to="10000" data-suf="+">10 000+</div><div class="bar"><i style="--w:100%"></i></div><div class="l">слайдов инфографики выпустила команда в TLQ</div></div>
+      <div class="stat"><div class="v" data-to="1500">1 500</div><div class="bar"><i style="--w:75%"></i></div><div class="l">товаров получили новые карточки</div></div>
+      <div class="stat"><div class="v" data-to="49" data-pre="+" data-suf="%">+49%</div><div class="bar"><i style="--w:49%"></i></div><div class="l">к CTR обложки: 3,16% → 4,7%</div></div>
+      <div class="stat"><div class="v" data-to="10">10</div><div class="bar"><i style="--w:60%"></i></div><div class="l">дизайнеров в команде, которую я собрал</div></div>
     </div>
   </div>
+</section>
 
-  <figure class="vid">
-    <video controls muted playsinline preload="metadata" poster="video/tlq_poster.jpg" width="1920" height="1080">
-      <source src="video/tlq_case.mp4" type="video/mp4">
-    </video>
-    <figcaption><span>Видео-кейс: редизайн обложки поднял CTR с 3,16% до 4,7%</span><span class="mono">46 сек</span></figcaption>
-  </figure>
+<!-- MARKETPLACES -->
+<section class="chap" data-sec="WB и Ozon" id="marketplaces">
+  <div class="wrap">
+    <div class="chead rv">
+      <div><div class="mono"><b>SEC 03</b> · WILDBERRIES И OZON</div><h2 class="cond ex">Инфографика</h2></div>
+      <p>Главное фото, слайды с преимуществами и обложки для A/B-тестов. Шаблоны в Figma делают из линейки товаров единый бренд.</p>
+    </div>
 
-  <div class="grid g2" style="margin-bottom:36px">
-    <figure class="crop"><img src="img/tlq2.jpg" alt="Карточки стикеров в ретро-стиле" loading="lazy" width="1600" height="1138"><figcaption><span>Стилевые серии: ретро, аниме, Duolingo</span><span class="mono">Серия · 8 слайдов</span></figcaption></figure>
-    <div>
-      <span class="mono" style="display:block;margin-bottom:8px">Лента карточек · прокрутите</span>
-      <div class="strip" tabindex="0" aria-label="Лента из 1000+ карточек для WB"><img src="img/cards1000.jpg" alt="Описание кейса и лента карточек для WB и Ozon" loading="lazy" width="661" height="8000"></div>
+    <figure class="vid rv" style="margin-bottom:40px">
+      <video controls muted playsinline preload="metadata" poster="video/tlq_poster.jpg" width="1920" height="1080"><source src="video/tlq_case.mp4" type="video/mp4"></video>
+      <figcaption><span>Видео-кейс TLQ: редизайн обложки поднял CTR с 3,16% до 4,7%</span><span class="mono">46 сек</span></figcaption>
+    </figure>
+
+    <div class="case rv">
+      <figure class="frame"><span class="img"><img src="img/tlq1.jpg" alt="Подборка карточек стикеров для WB: обложки для A/B-теста" loading="lazy" width="1600" height="1138"></span>
+        <figcaption><span>TLQ: стикеры и наклейки, 1 500 товаров</span><span class="mono">WB · OZON · 3:4</span></figcaption></figure>
+      <div>
+        <span class="mono">КЕЙС · 2024–2026</span>
+        <h3>10 000 слайдов для производителя наклеек</h3>
+        <p>Пришёл первым дизайнером на производство наклеек и товаров из Китая. Нужно было быстро оформить сотни новых SKU и сделать бренд узнаваемым в выдаче.</p>
+        <ul>
+          <li>Исследовал нишу, собрал стиль и систему шаблонов в Figma.</li>
+          <li>Вырастил команду до 10 дизайнеров, поставил процесс в Notion.</li>
+          <li>Делали 2–3 обложки на товар и проверяли A/B-тестами.</li>
+          <li>Набор «Любовь»: CTR 3,16% → 4,7%, выручка 1,29 млн ₽ за 30 дней по MPStats.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid g2 rv" style="margin-bottom:40px">
+      <figure class="frame"><span class="img"><img src="img/tlq2.jpg" alt="Карточки стикеров в ретро-стиле" loading="lazy" width="1600" height="1138"></span><figcaption><span>Стилевые серии: ретро, аниме, Duolingo</span><span class="mono">СЕРИЯ · 8 СЛАЙДОВ</span></figcaption></figure>
+      <div><span class="mono" style="display:block;margin-bottom:10px">ЛЕНТА КАРТОЧЕК · ПРОКРУТИТЕ</span><div class="strip" tabindex="0" aria-label="Лента карточек для WB"><img src="img/cards1000.jpg" alt="Описание кейса и лента карточек для WB и Ozon" loading="lazy" width="661" height="8000"></div></div>
+    </div>
+
+    <div class="grid g5 rv">
+      <figure class="frame"><span class="img"><img src="img/massage.jpg" alt="Карточка массажёра для головы" loading="lazy" width="1200" height="1600"></span><figcaption><span>Массажёр</span><span class="mono">3:4</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/watch.jpg" alt="Карточка смарт-часов" loading="lazy" width="1200" height="1600"></span><figcaption><span>Смарт-часы</span><span class="mono">3:4</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/hism.jpg" alt="Карточка лазерного фонаря" loading="lazy" width="1200" height="1600"></span><figcaption><span>Фонарь</span><span class="mono">3:4</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/knife.jpg" alt="Карточка охотничьего ножа" loading="lazy" width="900" height="1200"></span><figcaption><span>Нож «Сибирь»</span><span class="mono">A/B</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/bag.jpg" alt="Карточка термосумки" loading="lazy" width="1200" height="1600"></span><figcaption><span>Термосумка</span><span class="mono">3:4</span></figcaption></figure>
     </div>
   </div>
+</section>
 
-  <div class="grid g5 keep2">
-    <figure class="crop"><img src="img/massage.jpg" alt="Карточка массажёра для головы" loading="lazy" width="1200" height="1600"><figcaption><span>Массажёр</span><span class="mono">3:4</span></figcaption></figure>
-    <figure class="crop"><img src="img/watch.jpg" alt="Карточка смарт-часов" loading="lazy" width="1200" height="1600"><figcaption><span>Смарт-часы</span><span class="mono">3:4</span></figcaption></figure>
-    <figure class="crop"><img src="img/hism.jpg" alt="Карточка лазерного фонаря" loading="lazy" width="1200" height="1600"><figcaption><span>Фонарь</span><span class="mono">3:4</span></figcaption></figure>
-    <figure class="crop"><img src="img/knife.jpg" alt="Карточка охотничьего ножа «Сибирь»" loading="lazy" width="900" height="1200"><figcaption><span>Нож «Сибирь»</span><span class="mono">A/B</span></figcaption></figure>
-    <figure class="crop"><img src="img/bag.jpg" alt="Карточка термосумки на багажник" loading="lazy" width="1200" height="1600"><figcaption><span>Термосумка</span><span class="mono">3:4</span></figcaption></figure>
-  </div>
-</div></section>
-
-<section class="block" id="youtube"><div class="wrap">
-  <div class="head">
-    <div><span class="mono">02 / YouTube</span><h2>Превью для видео</h2></div>
-    <p>Одна идея, контрастный коллаж и короткий заголовок, который читается на экране телефона. Игры, обучение, финансы, лайфстайл.</p>
-  </div>
-  <div class="grid g3">
-    <figure class="crop"><img src="img/yt_m8.jpg" alt="Превью «M8 HMC имба Китая»" loading="lazy" width="1502" height="1002"><figcaption><span>War Thunder</span><span class="mono">1280×720</span></figcaption></figure>
-    <figure class="crop"><img src="img/yt_ac.jpg" alt="Превью обзора Assassin's Creed Shadows" loading="lazy" width="1506" height="1006"><figcaption><span>Игровой обзор</span><span class="mono">1280×720</span></figcaption></figure>
-    <figure class="crop"><img src="img/yt_prison.jpg" alt="Превью «7 дней в тюрьме»" loading="lazy" width="1502" height="1002"><figcaption><span>Лайфстайл</span><span class="mono">1280×720</span></figcaption></figure>
-    <figure class="crop"><img src="img/yt_bank.jpg" alt="Превью про финансы" loading="lazy" width="1506" height="1006"><figcaption><span>Финансы</span><span class="mono">1280×720</span></figcaption></figure>
-    <figure class="crop"><img src="img/yt_eng.jpg" alt="Превью «Времена английского за 15 минут»" loading="lazy" width="1502" height="1002"><figcaption><span>Обучение</span><span class="mono">1280×720</span></figcaption></figure>
-    <figure class="crop"><img src="img/yt_astro.jpg" alt="Превью «Игра года Astro Bot»" loading="lazy" width="1502" height="1002"><figcaption><span>Игры</span><span class="mono">1280×720</span></figcaption></figure>
-  </div>
-</div></section>
-
-<section class="block" id="print"><div class="wrap">
-  <div class="head">
-    <div><span class="mono">03 / Печать</span><h2>Полиграфия и упаковка</h2></div>
-    <p>Год работал мастером полиграфии в копицентре, поэтому макеты уходят в типографию с вылетами, правильным цветом и без лишних кругов правок.</p>
-  </div>
-  <div class="grid g2" style="margin-bottom:20px">
-    <figure class="crop"><img src="img/guide.jpg" alt="Путеводитель по Петербургу для конференции ХИТ" loading="lazy" width="1600" height="1200"><figcaption><span>Путеводитель по Петербургу для конференции «ХИТ»</span><span class="mono">15 стр · PDF</span></figcaption></figure>
-    <figure class="crop"><img src="img/booklet.jpg" alt="Евробуклет для центра «Место силы»" loading="lazy" width="1600" height="900"><figcaption><span>Евробуклет «Место силы»</span><span class="mono">A4 · 2 сгиба</span></figcaption></figure>
-  </div>
-  <div class="grid g2" style="margin-bottom:20px">
-    <figure class="crop"><img src="img/poster1.jpg" alt="Афиша концерта «Братья Рубинштейн»" loading="lazy" width="1600" height="892"><figcaption><span>Афиши «Классической точки»</span><span class="mono">A3 · экран</span></figcaption></figure>
-    <figure class="crop"><img src="img/poster2.jpg" alt="Афиша «Услышать Париж»" loading="lazy" width="1600" height="905"><figcaption><span>Моно-спектакль «Услышать Париж»</span><span class="mono">A3 · QR</span></figcaption></figure>
-  </div>
-  <div class="grid g3">
-    <figure class="crop"><img src="img/spice1.jpg" alt="Этикетка «Азиатские травы» на банке" loading="lazy" width="1600" height="1600"><figcaption><span>Линейка из 10 приправ</span><span class="mono">60×70 мм</span></figcaption></figure>
-    <figure class="crop"><img src="img/spice2.jpg" alt="Этикетка «Паприка» на банке" loading="lazy" width="1600" height="1600"><figcaption><span>Этикетка «Паприка»</span><span class="mono">60×70 мм</span></figcaption></figure>
-    <figure class="crop"><img src="img/album.jpg" alt="Обложка альбома Маши Захарияш" loading="lazy" width="1500" height="1500"><figcaption><span>Обложка альбома</span><span class="mono">3000×3000</span></figcaption></figure>
-  </div>
-</div></section>
-
-<section class="block" id="web"><div class="wrap">
-  <div class="head">
-    <div><span class="mono">04 / Веб</span><h2>Интернет-магазин STURM</h2></div>
-    <p>Маркетплейс сантехники с шоу-румом в Петербурге. Спроектировал главную, каталог с фильтрами, карточку товара, корзину, доставку и личный кабинет, а также адаптив для смартфонов и планшетов.</p>
-  </div>
-  <div class="case">
-    <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="mono">STURM · главная</span></div>
-      <div class="view" tabindex="0" aria-label="Главная страница STURM, прокрутите"><img src="img/sturm_main.jpg" alt="Главная страница интернет-магазина STURM" loading="lazy" width="1600" height="3158"></div></div>
-    <div>
-      <figure class="crop"><img src="img/sturm_prev.jpg" alt="STURM на ноутбуке, планшете и смартфоне" loading="lazy" width="1600" height="1167"><figcaption><span>Десктоп и мобильная версия</span><span class="mono">12 кол · 1280 px</span></figcaption></figure>
-      <ul style="padding-left:18px">
-        <li>Модульная сетка 12 колонок: карточки, фото и тексты легко собираются в любые блоки.</li>
-        <li>UI-kit: цвета, типографика, кнопки и карточки товаров.</li>
-        <li>Лендинги под коллекции и акции.</li>
-      </ul>
+<!-- YOUTUBE -->
+<section class="chap" data-sec="YouTube" id="youtube">
+  <div class="wrap">
+    <div class="chead rv">
+      <div><div class="mono"><b>SEC 04</b> · YOUTUBE</div><h2 class="cond ex">Превью</h2></div>
+      <p>Одна идея, контрастный коллаж и короткий заголовок, который читается на экране телефона. Игры, обучение, финансы, лайфстайл.</p>
+    </div>
+    <div class="grid g3 rv">
+      <figure class="frame"><span class="img"><img src="img/yt_m8.jpg" alt="Превью «M8 HMC имба Китая»" loading="lazy" width="1502" height="1002"></span><figcaption><span>War Thunder</span><span class="mono">1280×720</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/yt_ac.jpg" alt="Превью обзора Assassin's Creed Shadows" loading="lazy" width="1506" height="1006"></span><figcaption><span>Игровой обзор</span><span class="mono">1280×720</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/yt_prison.jpg" alt="Превью «7 дней в тюрьме»" loading="lazy" width="1502" height="1002"></span><figcaption><span>Лайфстайл</span><span class="mono">1280×720</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/yt_bank.jpg" alt="Превью про финансы" loading="lazy" width="1506" height="1006"></span><figcaption><span>Финансы</span><span class="mono">1280×720</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/yt_eng.jpg" alt="Превью «Времена английского за 15 минут»" loading="lazy" width="1502" height="1002"></span><figcaption><span>Обучение</span><span class="mono">1280×720</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/yt_astro.jpg" alt="Превью «Игра года Astro Bot»" loading="lazy" width="1502" height="1002"></span><figcaption><span>Игры</span><span class="mono">1280×720</span></figcaption></figure>
     </div>
   </div>
-  <div class="grid g2">
-    <div><span class="mono" style="display:block;margin-bottom:8px">Сетка, цвет, типографика, адаптив · прокрутите</span>
-      <div class="strip" tabindex="0" aria-label="Кейс STURM: сетка и стиль"><img src="img/sturm_case.jpg" alt="Сетка, стиль и адаптив сайта STURM" loading="lazy" width="1600" height="5941"></div></div>
-    <div><span class="mono" style="display:block;margin-bottom:8px">Карточка товара · прокрутите</span>
-      <div class="strip" tabindex="0" aria-label="Карточка товара STURM"><img src="img/sturm_card.jpg" alt="Карточка товара STURM" loading="lazy" width="1600" height="2521"></div></div>
-  </div>
-</div></section>
+</section>
 
-<section class="block" id="brand"><div class="wrap">
-  <div class="head">
-    <div><span class="mono">05 / Айдентика</span><h2>Логотипы и фирменный стиль</h2></div>
-    <p>Логотип, логобук и носители: визитки, вывески, упаковка, мерч. Делал знаки для бизнеса в России и Швейцарии.</p>
+<!-- PRINT -->
+<section class="chap" data-sec="Печать" id="print">
+  <div class="wrap">
+    <div class="chead rv">
+      <div><div class="mono"><b>SEC 05</b> · ПЕЧАТЬ И УПАКОВКА</div><h2 class="cond ex">Полиграфия</h2></div>
+      <p>Год работал мастером полиграфии в копицентре, поэтому макеты уходят в типографию с вылетами, правильным цветом и без лишних кругов правок.</p>
+    </div>
+    <div class="grid g2 rv" style="margin-bottom:18px">
+      <figure class="frame"><span class="img"><img src="img/guide.jpg" alt="Путеводитель по Петербургу для конференции ХИТ" loading="lazy" width="1600" height="1200"></span><figcaption><span>Путеводитель для конференции «ХИТ»</span><span class="mono">15 СТР · PDF</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/booklet.jpg" alt="Евробуклет «Место силы»" loading="lazy" width="1600" height="900"></span><figcaption><span>Евробуклет «Место силы»</span><span class="mono">A4 · 2 СГИБА</span></figcaption></figure>
+    </div>
+    <div class="grid g2 rv" style="margin-bottom:18px">
+      <figure class="frame"><span class="img"><img src="img/poster1.jpg" alt="Афиша «Братья Рубинштейн»" loading="lazy" width="1600" height="892"></span><figcaption><span>Афиши «Классической точки»</span><span class="mono">A3 · ЭКРАН</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/poster2.jpg" alt="Афиша «Услышать Париж»" loading="lazy" width="1600" height="905"></span><figcaption><span>«Услышать Париж»</span><span class="mono">A3 · QR</span></figcaption></figure>
+    </div>
+    <div class="grid g3 rv">
+      <figure class="frame"><span class="img"><img src="img/spice1.jpg" alt="Этикетка «Азиатские травы»" loading="lazy" width="1600" height="1600"></span><figcaption><span>Линейка из 10 приправ</span><span class="mono">60×70 ММ</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/spice2.jpg" alt="Этикетка «Паприка»" loading="lazy" width="1600" height="1600"></span><figcaption><span>Этикетка «Паприка»</span><span class="mono">60×70 ММ</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/album.jpg" alt="Обложка альбома" loading="lazy" width="1500" height="1500"></span><figcaption><span>Обложка альбома</span><span class="mono">3000×3000</span></figcaption></figure>
+    </div>
   </div>
-  <div class="grid g3">
-    <figure class="crop"><img src="img/radia.jpg" alt="Логотип RadiaPoursuite" loading="lazy" width="1600" height="1200"><figcaption><span>RadiaPoursuite</span><span class="mono">Логотип</span></figcaption></figure>
-    <figure class="crop"><img src="img/etude.jpg" alt="Знак Étude Seppey Riand Lorenzetti на табличке" loading="lazy" width="1600" height="1200"><figcaption><span>Étude Seppey Riand Lorenzetti</span><span class="mono">Знак</span></figcaption></figure>
-    <figure class="crop"><img src="img/proclimat.jpg" alt="Логобук «ПРО Климат»" loading="lazy" width="1600" height="1200"><figcaption><span>ПРО Климат</span><span class="mono">Логобук</span></figcaption></figure>
-    <figure class="crop"><img src="img/integra.jpg" alt="Логотип Intégra-Sion" loading="lazy" width="1600" height="1067"><figcaption><span>Intégra-Sion</span><span class="mono">Логотип</span></figcaption></figure>
-    <figure class="crop"><img src="img/logo10.jpg" alt="Логотип Luna Style из серии «10 логотипов»" loading="lazy" width="1600" height="1138"><figcaption><span>10 логотипов для бизнеса</span><span class="mono">Серия</span></figcaption></figure>
-    <figure class="crop"><img src="img/vera.jpg" alt="Упаковка Vera Bloom" loading="lazy" width="1535" height="1022"><figcaption><span>Vera Bloom</span><span class="mono">Упаковка</span></figcaption></figure>
-  </div>
-</div></section>
+</section>
 
-<section class="block" id="prices"><div class="wrap">
-  <div class="head">
-    <div><span class="mono">06 / Услуги</span><h2>Что заказать и сколько стоит</h2></div>
-    <p>Цены стартовые: точную сумму назову после брифа. В каждую услугу входят 2 круга правок и исходники.</p>
+<!-- WEB -->
+<section class="chap" data-sec="Сайты" id="web">
+  <div class="wrap">
+    <div class="chead rv">
+      <div><div class="mono"><b>SEC 06</b> · ВЕБ</div><h2 class="cond ex">STURM</h2></div>
+      <p>Интернет-магазин сантехники с шоу-румом в Петербурге: главная, каталог, карточка товара, корзина, оплата, доставка и личный кабинет — в 7 размерах экрана, от 1920 до 320 px.</p>
+    </div>
+    <div class="case rv">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="mono">STURM · ГЛАВНАЯ</span></div>
+        <div class="view" tabindex="0" aria-label="Главная страница STURM"><img src="img/sturm_main.jpg" alt="Главная страница STURM" loading="lazy" width="1600" height="3158"></div></div>
+      <div>
+        <figure class="frame"><span class="img"><img src="img/sturm_prev.jpg" alt="STURM на ноутбуке, планшете и смартфоне" loading="lazy" width="1600" height="1167"></span><figcaption><span>Десктоп и мобильная версия</span><span class="mono">12 КОЛ · 1280</span></figcaption></figure>
+        <ul style="list-style:none;padding:0;margin:18px 0 0">
+          <li style="padding:10px 0 10px 26px;border-top:1px solid var(--line);position:relative"><span class="pink" style="position:absolute;left:0">▸</span>Модульная сетка 12 колонок и UI-kit.</li>
+          <li style="padding:10px 0 10px 26px;border-top:1px solid var(--line);position:relative"><span class="pink" style="position:absolute;left:0">▸</span>Адаптив: 1920, 1440, 1280, 1020, 768, 480, 320 px.</li>
+          <li style="padding:10px 0 10px 26px;border-top:1px solid var(--line);position:relative"><span class="pink" style="position:absolute;left:0">▸</span>Лендинги под коллекции и акции.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid g2 rv">
+      <div><span class="mono" style="display:block;margin-bottom:10px">СЕТКА, ЦВЕТ, ТИПОГРАФИКА · ПРОКРУТИТЕ</span><div class="strip" tabindex="0" aria-label="Кейс STURM: сетка и стиль"><img src="img/sturm_case.jpg" alt="Сетка, стиль и адаптив сайта STURM" loading="lazy" width="1600" height="5941"></div></div>
+      <div><span class="mono" style="display:block;margin-bottom:10px">КАРТОЧКА ТОВАРА · ПРОКРУТИТЕ</span><div class="strip" tabindex="0" aria-label="Карточка товара STURM"><img src="img/sturm_card.jpg" alt="Карточка товара STURM" loading="lazy" width="1600" height="2521"></div></div>
+    </div>
   </div>
-  <div class="prices">
-    <div class="price"><h3>Главное фото для WB или Ozon</h3><span class="cost">от 2 500 ₽</span><p>2 варианта обложки для A/B-теста. Срок 2 дня.</p></div>
-    <div class="price"><h3>Карточка под ключ</h3><span class="cost">от 8 000 ₽</span><p>Обложка и 5 слайдов с преимуществами, анализ 5 конкурентов. Срок 3–4 дня.</p></div>
-    <div class="price"><h3>Контент на месяц</h3><span class="cost">от 30 000 ₽</span><p>4 карточки под ключ, обновление обложек по итогам тестов, приоритетные сроки.</p></div>
-    <div class="price"><h3>Превью для YouTube</h3><span class="cost">от 1 500 ₽</span><p>Пакет из 3 превью — от 4 000 ₽. Срок 1 день.</p></div>
-    <div class="price"><h3>Полиграфия</h3><span class="cost">от 3 000 ₽</span><p>Листовка, афиша, буклет, каталог (от 1 500 ₽ за разворот). Файлы для типографии.</p></div>
-    <div class="price"><h3>Упаковка и этикетки</h3><span class="cost">от 7 000 ₽</span><p>Дизайн, развёртка, технические файлы, 3D-мокап.</p></div>
-    <div class="price"><h3>Логотип и мини-брендбук</h3><span class="cost">от 15 000 ₽</span><p>3 концепции, логотип, цвета, шрифты, носители.</p></div>
-    <div class="price"><h3>Лендинг на Tilda</h3><span class="cost">от 30 000 ₽</span><p>Дизайн, адаптив, сборка на Tilda.</p></div>
-    <div class="price"><h3>Шаблоны для команды</h3><span class="cost">от 20 000 ₽</span><p>Система шаблонов карточек в Figma, чтобы ваши дизайнеры работали в едином стиле.</p></div>
-  </div>
-  <p class="note">Работаю как самозанятый: выдаю чек на каждую оплату. Для больших проектов работаю по договору и этапам.</p>
-</div></section>
+</section>
 
-<section class="block"><div class="wrap">
-  <div class="head"><div><span class="mono">07 / Процесс</span><h2>Как я работаю</h2></div><p>От брифа до готовых файлов обычно проходит 2–5 дней, в зависимости от объёма.</p></div>
-  <div class="steps">
-    <div class="step"><b>Бриф</b><p>Товар, аудитория, конкуренты, сроки. Если нужно, помогу составить ТЗ.</p></div>
-    <div class="step"><b>Концепт</b><p>Показываю 2 варианта главного экрана или обложки.</p></div>
-    <div class="step"><b>Дизайн и правки</b><p>Довожу выбранный вариант, 2 круга правок включены.</p></div>
-    <div class="step"><b>Файлы</b><p>Готовые изображения под требования площадки или типографии и исходники.</p></div>
+<!-- BRAND -->
+<section class="chap" data-sec="Айдентика" id="brand">
+  <div class="wrap">
+    <div class="chead rv">
+      <div><div class="mono"><b>SEC 07</b> · АЙДЕНТИКА</div><h2 class="cond ex">Логотипы</h2></div>
+      <p>Логотип, логобук и носители: визитки, вывески, упаковка, мерч. Знаки для бизнеса в России и Швейцарии.</p>
+    </div>
+    <div class="grid g3 rv">
+      <figure class="frame"><span class="img"><img src="img/radia.jpg" alt="Логотип RadiaPoursuite" loading="lazy" width="1600" height="1200"></span><figcaption><span>RadiaPoursuite</span><span class="mono">ЛОГОТИП</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/etude.jpg" alt="Знак Étude Seppey Riand Lorenzetti" loading="lazy" width="1600" height="1200"></span><figcaption><span>Étude Seppey Riand Lorenzetti</span><span class="mono">ЗНАК</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/proclimat.jpg" alt="Логобук «ПРО Климат»" loading="lazy" width="1600" height="1200"></span><figcaption><span>ПРО Климат</span><span class="mono">ЛОГОБУК</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/integra.jpg" alt="Логотип Intégra-Sion" loading="lazy" width="1600" height="1067"></span><figcaption><span>Intégra-Sion</span><span class="mono">ЛОГОТИП</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/hamitov.jpg" alt="Hamitov: логотип на носителях" loading="lazy" width="1600" height="900"></span><figcaption><span>Hamitov</span><span class="mono">НОСИТЕЛИ</span></figcaption></figure>
+      <figure class="frame"><span class="img"><img src="img/logo10.jpg" alt="Логотип Luna Style из серии «10 логотипов за 10 часов»" loading="lazy" width="1600" height="1138"></span><figcaption><span>10 логотипов за 10 часов</span><span class="mono">СЕРИЯ</span></figcaption></figure>
+    </div>
   </div>
-</div></section>
+</section>
+
+<!-- PRICES -->
+<section class="chap" data-sec="Цены" id="prices">
+  <div class="wrap">
+    <div class="chead rv">
+      <div><div class="mono"><b>SEC 08</b> · УСЛУГИ</div><h2 class="cond ex">Цены</h2></div>
+      <p>Стартовые цены, точную сумму назову после брифа. В каждую услугу входят 2 круга правок и исходники.</p>
+    </div>
+    <div class="prices rv">
+      <div class="price"><span class="tag">WB / OZON · 2 ДНЯ</span><h3>Главное фото</h3><div class="cost">от 2 500 ₽</div><p>2 варианта обложки для A/B-теста.</p></div>
+      <div class="price"><span class="tag">WB / OZON · 3–4 ДНЯ</span><h3>Карточка под ключ</h3><div class="cost">от 8 000 ₽</div><p>Обложка и 5 слайдов, анализ 5 конкурентов.</p></div>
+      <div class="price"><span class="tag">WB / OZON · МЕСЯЦ</span><h3>Контент на месяц</h3><div class="cost">от 30 000 ₽</div><p>4 карточки под ключ, обновление обложек по тестам.</p></div>
+      <div class="price"><span class="tag">YOUTUBE · 1 ДЕНЬ</span><h3>Превью</h3><div class="cost">от 1 500 ₽</div><p>Пакет из 3 превью — от 4 000 ₽.</p></div>
+      <div class="price"><span class="tag">ПЕЧАТЬ</span><h3>Полиграфия</h3><div class="cost">от 3 000 ₽</div><p>Листовка, афиша, буклет; каталог от 1 500 ₽ за разворот.</p></div>
+      <div class="price"><span class="tag">УПАКОВКА</span><h3>Упаковка и этикетки</h3><div class="cost">от 7 000 ₽</div><p>Дизайн, развёртка, технические файлы, 3D-мокап.</p></div>
+      <div class="price"><span class="tag">АЙДЕНТИКА</span><h3>Логотип и мини-брендбук</h3><div class="cost">от 15 000 ₽</div><p>3 концепции, цвета, шрифты, носители.</p></div>
+      <div class="price"><span class="tag">ВЕБ</span><h3>Лендинг на Tilda</h3><div class="cost">от 30 000 ₽</div><p>Дизайн, адаптив, сборка.</p></div>
+      <div class="price"><span class="tag">КОМАНДА</span><h3>Шаблоны в Figma</h3><div class="cost">от 20 000 ₽</div><p>Система шаблонов карточек для ваших дизайнеров.</p></div>
+    </div>
+    <p class="note">Работаю как самозанятый: чек на каждую оплату. Большие проекты — по договору и этапам.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="chap" data-sec="Процесс" id="process">
+  <div class="wrap">
+    <div class="chead rv">
+      <div><div class="mono"><b>SEC 09</b> · ПРОЦЕСС</div><h2 class="cond ex">Как я работаю</h2></div>
+      <p>От брифа до готовых файлов обычно 2–5 дней, в зависимости от объёма.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><div class="k">01</div><b>Бриф</b><p>Товар, аудитория, конкуренты, сроки. Помогу составить ТЗ.</p></div>
+      <div class="step"><div class="k">02</div><b>Концепт</b><p>2 варианта главного экрана или обложки.</p></div>
+      <div class="step"><div class="k">03</div><b>Дизайн и правки</b><p>Довожу выбранный вариант, 2 круга правок.</p></div>
+      <div class="step"><div class="k">04</div><b>Файлы</b><p>Под требования площадки или типографии и исходники.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final chap" data-sec="Контакты" id="contact">
+  <div class="ghost" aria-hidden="true"><span>Telegram — @FrolovPetr217 — Telegram — @FrolovPetr217 — Telegram — @FrolovPetr217 — Telegram — @FrolovPetr217 — </span></div>
+  <div class="wrap" style="position:relative">
+    <div class="mono">ОТВЕЧАЮ В ТЕЧЕНИЕ ДНЯ</div>
+    <h2 class="cond">Пишите.</h2>
+    <div class="rule"></div>
+    <div class="contacts">
+      <div><span class="mono">Telegram</span><a href="https://t.me/FrolovPetr217" target="_blank" rel="noopener">@FrolovPetr217</a></div>
+      <div><span class="mono">Телефон</span><span class="v" id="phone">+7 950 048-46-96</span><button class="copy" type="button" data-copy="phone">Скопировать</button></div>
+      <div><span class="mono">Почта</span><span class="v" id="mail">petrfrolov217@gmail.com</span><button class="copy" type="button" data-copy="mail">Скопировать</button></div>
+      <div><span class="mono">Ещё работы</span><a href="https://www.behance.net/frolovpetr" target="_blank" rel="noopener">Behance</a><a href="https://kwork.ru/user/frolovpetr" target="_blank" rel="noopener">Kwork</a></div>
+    </div>
+  </div>
+</section>
 </main>
-
-<section class="contact" id="contact"><div class="wrap">
-  <span class="mono" style="color:inherit;opacity:.65">Контакты</span>
-  <h2 style="margin-top:12px">Расскажите про товар или проект — отвечу в течение дня</h2>
-  <div class="clist">
-    <div><span class="mono">Telegram</span><a href="https://t.me/FrolovPetr217" target="_blank" rel="noopener">@FrolovPetr217</a></div>
-    <div><span class="mono">Телефон</span><span class="v" id="phone">+7 950 048-46-96</span><button class="copy" type="button" data-copy="phone">Скопировать</button></div>
-    <div><span class="mono">Почта</span><span class="v" id="mail">petrfrolov217@gmail.com</span><button class="copy" type="button" data-copy="mail">Скопировать</button></div>
-    <div><span class="mono">Ещё работы</span><a href="https://www.behance.net/frolovpetr" target="_blank" rel="noopener">Behance</a><a href="https://kwork.ru/user/frolovpetr" target="_blank" rel="noopener">Kwork</a><a href="portfolio.pdf" download="Фролов_Петр_Портфолио.pdf">PDF-портфолио</a></div>
-  </div>
-</div></section>
-<footer><div class="wrap">Петр Фролов · графический дизайнер · Санкт-Петербург · 2026</div></footer>
+<footer><div class="wrap mono">ПЕТР ФРОЛОВ · ГРАФИЧЕСКИЙ ДИЗАЙНЕР · САНКТ-ПЕТЕРБУРГ · 2026</div></footer>
 
 <div class="lb" id="lb" hidden><button type="button" id="lbclose">Закрыть</button><img id="lbimg" alt=""></div>
 
 <script>
 (function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+
+  /* часы МСК */
+  var clock=document.getElementById('clock');
+  function tick(){
+    try{
+      var d=new Date(Date.now()+ (new Date().getTimezoneOffset()+180)*60000);
+      var p=function(n){return String(n).padStart(2,'0')};
+      clock.innerHTML=d.getFullYear()+'.'+p(d.getMonth()+1)+'.'+p(d.getDate())+' · '+p(d.getHours())+':'+p(d.getMinutes())+' <b>MSK</b>';
+    }catch(e){}
+  }
+  tick(); setInterval(tick,15000);
+
+  /* главы, HUD и свечение */
+  var secs=[].slice.call(document.querySelectorAll('section[data-sec]'));
+  var dash=document.getElementById('dash'), name=document.getElementById('secname'), pos=document.getElementById('scrollpos');
+  secs.forEach(function(){dash.appendChild(document.createElement('i'))});
+  var dots=dash.children;
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-innerHeight, y=scrollY;
+    var pct=h>0?Math.round(y/h*100):0;
+    pos.textContent='SCROLL '+String(pct).padStart(3,'0')+'%';
+    var cur=0;
+    for(var i=0;i<secs.length;i++){ if(secs[i].getBoundingClientRect().top<innerHeight*.45) cur=i; }
+    for(var j=0;j<dots.length;j++) dots[j].className=j===cur?'on':'';
+    name.innerHTML='SEC '+String(cur+1).padStart(2,'0')+' · <b>'+secs[cur].getAttribute('data-sec').toUpperCase()+'</b>';
+    root.style.setProperty('--gy', (25+ (cur%3)*25)+'%');
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* печатающийся текст */
+  var typed=document.getElementById('typed');
+  if(!reduce && typed){
+    var full=typed.getAttribute('data-text'), i=0, cur='<span class="cur" aria-hidden="true"></span>';
+    typed.setAttribute('aria-label',full); typed.innerHTML=cur;
+    setTimeout(function step(){ i++; typed.innerHTML=full.slice(0,i)+cur; if(i<full.length) setTimeout(step, 38+Math.random()*50); },500);
+  }
+
+  /* сканер направлений */
+  var cells=[].slice.call(document.querySelectorAll('.cell')), lab=document.getElementById('scanlab'), k=0, hold=false;
+  function setCell(n){ cells.forEach(function(c,ix){c.classList.toggle('on',ix===n)}); lab.innerHTML='СКАНИРУЮ ▸ <b>'+cells[n].getAttribute('data-k')+'</b>'; }
+  cells.forEach(function(c,ix){ c.addEventListener('mouseenter',function(){hold=true;k=ix;setCell(ix)}); c.addEventListener('mouseleave',function(){hold=false}); c.addEventListener('focus',function(){hold=true;k=ix;setCell(ix)}); c.addEventListener('blur',function(){hold=false}); });
+  if(!reduce) setInterval(function(){ if(hold) return; k=(k+1)%cells.length; setCell(k); },1100);
+
+  /* появление и счётчики */
+  var fmt=function(n){return Math.round(n).toLocaleString('ru-RU').replace(/ /g,' ')};
+  function count(el){
+    var to=+el.getAttribute('data-to'), pre=el.getAttribute('data-pre')||'', suf=el.getAttribute('data-suf')||'', t0=null;
+    function f(ts){ if(!t0) t0=ts; var p=Math.min(1,(ts-t0)/1600), e=1-Math.pow(1-p,3); el.textContent=pre+fmt(to*e)+(p>=1?suf:''); if(p<1) requestAnimationFrame(f); }
+    requestAnimationFrame(f);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    root.classList.add('anim');
+    var rvs=[].slice.call(document.querySelectorAll('.rv'));
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);
+      [].forEach.call(e.target.querySelectorAll('[data-to]'),count);
+      [].forEach.call(e.target.querySelectorAll('.bar i'),function(b){ var w=b.style.getPropertyValue('--w'); b.style.width='0'; requestAnimationFrame(function(){requestAnimationFrame(function(){b.style.width=w})}); });
+    } }); },{threshold:.12, rootMargin:'0px 0px -6% 0px'});
+    rvs.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<innerHeight && r.bottom>0){ el.classList.add('in'); } else io.observe(el); });
+  }
+
+  /* лайтбокс */
   var lb=document.getElementById('lb'), im=document.getElementById('lbimg');
   function close(){lb.hidden=true; im.removeAttribute('src');}
-  document.querySelectorAll('.crop img').forEach(function(el){
-    el.addEventListener('click',function(){im.src=el.currentSrc||el.src; im.alt=el.alt; lb.hidden=false;});
-  });
+  [].forEach.call(document.querySelectorAll('.frame img'),function(el){ el.addEventListener('click',function(){im.src=el.currentSrc||el.src; im.alt=el.alt; lb.hidden=false;}); });
   lb.addEventListener('click',close);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});
-  document.querySelectorAll('[data-copy]').forEach(function(b){
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!lb.hidden) close(); });
+
+  /* копирование */
+  [].forEach.call(document.querySelectorAll('[data-copy]'),function(b){
     b.addEventListener('click',function(){
-      var t=document.getElementById(b.dataset.copy);
+      var t=document.getElementById(b.getAttribute('data-copy'));
       var done=function(){b.textContent='Скопировано';setTimeout(function(){b.textContent='Скопировать'},1600)};
-      try{navigator.clipboard.writeText(t.textContent).then(done,function(){sel(t)});}catch(e){sel(t)}
+      var sel=function(){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r)};
+      try{navigator.clipboard.writeText(t.textContent).then(done,sel)}catch(e){sel()}
     });
   });
-  function sel(t){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);}
 })();
 </script>
-
 </body>
 </html>
