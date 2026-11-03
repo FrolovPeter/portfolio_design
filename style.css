@@ -202,3 +202,46 @@ footer{padding-block:24px 56px;text-align:center}
   .atmo .grain{animation:none}
   .anim .rv{opacity:1;transform:none;transition:none}
 }
+
+/* hero: было → стало */
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,400px);grid-template-areas:"top vis" "bot vis";column-gap:64px;align-items:center}
+.htop{grid-area:top;align-self:end}.hbot{grid-area:bot;align-self:start}.ba{grid-area:vis}
+.hero .hgrid h1{font-size:clamp(48px,6.4vw,112px)}
+.ba{margin:0;position:relative}
+.ba-card{position:relative;aspect-ratio:600/899;border:1px solid var(--line);background:var(--cell);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,45,143,.08)}
+.ba-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba-old{animation:baOld 9s cubic-bezier(.4,0,.2,1) infinite}
+.ba-new{opacity:0;animation:baNew 9s cubic-bezier(.4,0,.2,1) infinite}
+.ba-money{position:absolute;left:8%;right:8%;bottom:19%;padding:14px 16px;background:var(--pink);color:#140810;transform:rotate(-3deg) scale(.6);opacity:0;animation:baMoney 9s cubic-bezier(.3,1.5,.5,1) infinite;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.ba-money b{display:block;font-family:var(--cond);font-weight:900;font-size:clamp(34px,3.6vw,52px);line-height:.95;text-transform:uppercase}
+.ba-money span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
+.ba-cap{position:relative;height:40px;margin-top:14px}
+.ba-cap span{position:absolute;left:0;top:0;padding:9px 12px;border:1px solid var(--line);background:var(--bg2);white-space:nowrap}
+.ba-cap b{color:var(--ink)}
+.ba-was{animation:baOld 9s infinite}
+.ba-now{opacity:0;border-color:var(--pink)!important;animation:baNew 9s infinite}
+.ba-now b{color:var(--pink)}
+@keyframes baOld{0%,26%{opacity:1;filter:none;transform:none}38%,92%{opacity:0;filter:blur(10px) saturate(.4);transform:scale(1.04)}100%{opacity:1;filter:none;transform:none}}
+@keyframes baNew{0%,28%{opacity:0;transform:scale(.97)}40%,90%{opacity:1;transform:none}100%{opacity:0;transform:scale(.97)}}
+@keyframes baMoney{0%,44%{opacity:0;transform:rotate(-3deg) scale(.6)}52%,86%{opacity:1;transform:rotate(-3deg) scale(1)}94%,100%{opacity:0;transform:rotate(-3deg) scale(.9)}}
+.anchor{position:relative;top:-70px;display:block}
+@media (max-width:980px){
+  .hgrid{grid-template-columns:1fr;grid-template-areas:"top" "vis" "bot"}
+  .ba{width:min(300px,72vw);margin:32px auto 0}
+}
+@media (max-width:640px){
+  .hero{padding-block:84px 40px;min-height:0}
+  .hero .kicker{display:none}
+  .hero .hgrid h1{margin-top:0}
+  .ba{width:min(200px,52vw);margin:22px auto 0}
+  .ba-cap{height:34px;margin-top:10px;display:flex;justify-content:center}.ba-cap span{left:0;right:0;margin:0 auto;width:max-content;padding:7px 10px;font-size:10px}
+  .ba-money{padding:9px 10px}.ba-money b{font-size:26px}.ba-money span{font-size:9px}
+  .hero .sub{margin-top:18px;font-size:16px}
+  .cta{margin-top:20px}
+  .hero .hgrid h1{font-size:clamp(48px,11vw,96px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .ba-old,.ba-was{animation:none;opacity:0}
+  .ba-new,.ba-now,.ba-money{animation:none;opacity:1}
+  .ba-money{transform:rotate(-3deg)}
+}

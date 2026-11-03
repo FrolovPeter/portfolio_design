@@ -48,3 +48,6 @@
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !lb.hidden) close(); });
   }
 })();
+/* ссылка …/#youtube сразу открывает вкладку превью */
+(function(){function go(){if(location.hash==='#youtube'){var t=document.getElementById('tab-yt');if(t){t.click();var w=document.getElementById('work');if(w)w.scrollIntoView();}}}
+window.addEventListener('hashchange',go);go();})();
