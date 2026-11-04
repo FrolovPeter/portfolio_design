@@ -2,7 +2,7 @@
 
 Сайт-воронка графического дизайнера: карточки и обложки для WB и Ozon, превью YouTube.
 
-Опубликован через GitHub Pages: https://molluskin.github.io/frolovpetr.github.io/
+Опубликован через GitHub Pages: https://frolovpeter.github.io/portfolio_design/
 
 ## Структура
 
