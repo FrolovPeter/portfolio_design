@@ -387,6 +387,7 @@
     var LIST = [
       { name: 'Набор «Любовь»', story: 0, old: 'img/hero_old.jpg', neu: 'img/hero_new.jpg', ar: '600 / 899', cap: 'Набор стикеров «Любовь»: после редизайна CTR обложки вырос с 3,16% до 4,7%.', alt: 'Обложка набора стикеров «Любовь»' },
       { name: 'Объёмные стикеры', story: 1, old: 'img/ba/3d_old.webp', neu: 'img/ba/3d_new.webp', ar: '3 / 4', cap: 'Объёмные стикеры: обложка в феврале и в сентябре 2024 года.', alt: 'Обложка набора объёмных стикеров' },
+      { name: 'Свет на стикерах', story: 3, old: 'img/ba/light_old.webp', neu: 'img/ba/light_new.webp', ar: '3 / 4', cap: 'Набор «Объёмные стикеры, 16 штук»: до и после работы со светом и объёмом.', alt: 'Обложка набора объёмных стикеров' },
       { name: 'Превью «Крипта»', story: 2, wide: true, ab: true, old: 'img/yt/03_kripto_A.jpg', neu: 'img/yt/03_kripto_B.jpg', ar: '16 / 9', cap: 'Слева вариант A «Этот рынок рухнет?», справа вариант B «Крипте конец?».', alt: 'Превью для YouTube про крипту' },
       { name: 'Превью «Код»', story: 2, wide: true, ab: true, old: 'img/yt/06_kod_A.jpg', neu: 'img/yt/06_kod_B.jpg', ar: '16 / 9', cap: 'Два варианта превью «Код за 5 минут» для A/B-теста.', alt: 'Превью для YouTube «Код за 5 минут»' }
     ];
