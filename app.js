@@ -216,7 +216,7 @@
   /* ——— карусель работ ——— */
   (function () {
     var cf = $('cf'), seg = $('seg');
-    if (!cf || !seg) return;
+    if (!cf) return;
     var V = function (file, poster, title, note) { return { video: 'video/' + file, poster: 'video/' + poster, src: 'video/' + poster, ar: 16 / 9, title: title, note: note }; };
     var I = function (id, ar, title, note, full) { return { src: 'img/w/' + id + '.webp', full: full || 'img/' + id + '.jpg', ar: ar, title: title, note: note }; };
     var M = function (id, title, note) { return I(id, .75, title, note, 'img/mp/' + id + '.jpg'); };
@@ -251,17 +251,18 @@
         V('print_case.mp4', 'print_poster.jpg', 'Видео-кейс: афиши и евробуклет', 'Видео, 54 сек'),
         V('red_case.mp4', 'red_poster.jpg', 'Видео-кейс: упаковка конструктора R:ED', 'Видео, 54 сек') ] },
       { id: 'logo', name: 'Логотипы', items: [
-        I('etude', 1.333, 'Étude Seppey Riand Lorenzetti', 'Знак'),
-        V('logo_case.mp4', 'logo_poster.jpg', 'Видео-кейс: логотипы и логобук', 'Видео, 39 сек'),
-        I('logo10', 1.407, 'Luna Style', 'От карандашного эскиза к вектору'),
-        I('proclimat', 1.333, 'ПРО Климат', 'Логобук') ] },
+        V('logo_case.mp4', 'logo_poster.jpg', 'Видео-кейс: логотипы и логобук', 'Видео, 39 сек') ] },
       { id: 'web', name: 'Сайты', items: [
         V('sturm_ba.mp4', 'sturm_ba_poster.jpg', 'STURM: было и стало', 'Видео-кейс, 55 сек') ] }
     ];
+    if (cf.getAttribute('data-set') === 'logo') CATS = [{ id: 'logo', name: 'Логотипы', items: [
+      I('etude', 1.333, 'Étude Seppey Riand Lorenzetti', 'Знак'),
+      I('logo10', 1.407, 'Luna Style', 'От карандашного эскиза к вектору'),
+      I('proclimat', 1.333, 'ПРО Климат', 'Логобук') ] }];
     var items = [], pos = [], cur = 0, slot = 300, catI = -1;
     var tEl = $('cf-title'), nEl = $('cf-note'), cEl = $('cf-n');
 
-    CATS.forEach(function (c, i) {
+    if (seg) CATS.forEach(function (c, i) {
       var b = document.createElement('button');
       b.type = 'button'; b.setAttribute('role', 'tab'); b.id = 'tab-' + c.id; b.textContent = c.name;
       b.setAttribute('aria-selected', 'false');
@@ -272,7 +273,7 @@
     function setCat(i) {
       if (i === catI) return;
       catI = i;
-      [].forEach.call(seg.children, function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+      if (seg) [].forEach.call(seg.children, function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
       cf.textContent = '';
       items = CATS[i].items.map(function (d, k) {
         var el = document.createElement('figure');
@@ -387,7 +388,6 @@
     var LIST = [
       { name: 'Набор «Любовь»', story: 0, old: 'img/hero_old.jpg', neu: 'img/hero_new.jpg', ar: '600 / 899', cap: 'Набор стикеров «Любовь»: после редизайна CTR обложки вырос с 3,16% до 4,7%.', alt: 'Обложка набора стикеров «Любовь»' },
       { name: 'Объёмные стикеры', story: 1, old: 'img/ba/3d_old.webp', neu: 'img/ba/3d_new.webp', ar: '3 / 4', cap: 'Объёмные стикеры: обложка в феврале и в сентябре 2024 года.', alt: 'Обложка набора объёмных стикеров' },
-      { name: 'Свет на стикерах', story: 3, old: 'img/ba/light_old.webp', neu: 'img/ba/light_new.webp', ar: '3 / 4', cap: 'Набор «Объёмные стикеры, 16 штук»: до и после работы со светом и объёмом.', alt: 'Обложка набора объёмных стикеров' },
       { name: 'Превью «Крипта»', story: 2, wide: true, ab: true, old: 'img/yt/03_kripto_A.jpg', neu: 'img/yt/03_kripto_B.jpg', ar: '16 / 9', cap: 'Слева вариант A «Этот рынок рухнет?», справа вариант B «Крипте конец?».', alt: 'Превью для YouTube про крипту' },
       { name: 'Превью «Код»', story: 2, wide: true, ab: true, old: 'img/yt/06_kod_A.jpg', neu: 'img/yt/06_kod_B.jpg', ar: '16 / 9', cap: 'Два варианта превью «Код за 5 минут» для A/B-теста.', alt: 'Превью для YouTube «Код за 5 минут»' }
     ];
